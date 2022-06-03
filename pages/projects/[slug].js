@@ -17,6 +17,7 @@ import Container from 'components/common/layout/Container';
 import PageHeader from 'components/common/headers/PageHeader';
 import ProjectHeader from 'components/projects/ProjectHeader';
 import SectionSeparator from 'components/common/layout/SectionSeparator';
+import PostBody from 'components/projects/PostBody';
 
 const Project = ({ data = {}, preview = {} }) => {
   const router = useRouter();
@@ -60,7 +61,9 @@ const Project = ({ data = {}, preview = {} }) => {
                 date={project?.date}
                 author={project?.author}
               />
+              <PostBody content={project?.body} />
             </article>
+
             <SectionSeparator />
           </>
         )}

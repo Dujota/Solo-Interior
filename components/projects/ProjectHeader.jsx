@@ -26,4 +26,4 @@ export default function ProjectHeader({ title, coverImage, date, author }) {
   );
 }
 
-ProjectHeader.propTypes = { title: PropTypes.string, coverImage: PropTypes.string, date: PropTypes.string };
+ProjectHeader.propTypes = { title: PropTypes.string, coverImage: PropTypes.object, date: PropTypes.string };

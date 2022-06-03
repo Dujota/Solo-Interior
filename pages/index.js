@@ -1,30 +1,40 @@
+import { indexQuery } from '@lib/queries/project';
 import { usePreviewSubscription, PortableText } from '@lib/sanity';
-import sanityClient, { getClient } from '@lib/sanity.server';
+import sanityClient, { getClient, overlayDrafts } from '@lib/sanity.server';
 
 import { groq } from 'next-sanity';
 
 import Head from 'next/head';
 import Image from 'next/image';
 
+import Layout from 'components/common/layout';
+import Container from 'components/common/layout';
+
 import styles from '../styles/Home.module.css';
 
-const query = groq`
-*[_type == "project"] | order(_createdAt desc)
-`;
-
 export async function getStaticProps({ params, preview = false }) {
-  const projects = await getClient(preview).fetch(query);
+  const allProjects = overlayDrafts(await getClient(preview).fetch(indexQuery));
 
   return {
     props: {
-      projects,
+      projects: allProjects,
       preview,
     },
     revalidate: 10,
   };
 }
 
-export default function Home({ projects }) {
-  console.log(projects);
-  return <>Hello</>;
+export default function Home({ projects, preview }) {
+  const [heroProject, moreProjects] = projects;
+
+  console.log(heroProject);
+  console.log(moreProjects);
+  return (
+    <Layout preview={preview}>
+      <Head>
+        <title>Solo Interior, European Interior Design</title>
+      </Head>
+      <Container>Hello World</Container>
+    </Layout>
+  );
 }
