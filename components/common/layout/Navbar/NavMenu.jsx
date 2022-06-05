@@ -6,15 +6,15 @@ import NavLink from './NavLink';
 // TODO, grab from site settings or navbar schema
 const LINKS = [
   { href: '/projects', name: 'Projects' },
-  { href: '/about', name: 'About Us' },
+  { href: '/about', name: 'About us' },
   { href: '/contact', name: 'Contact' },
 ];
 
 export default function NavMenu({ active }) {
   return (
     <NavMenuList className="nav-menu" active={active}>
-      {LINKS.map(({ href, name }) => (
-        <NavLink href={href} label={name} />
+      {LINKS.map(({ href, name }, index) => (
+        <NavLink key={index} href={href} label={name} />
       ))}
     </NavMenuList>
   );

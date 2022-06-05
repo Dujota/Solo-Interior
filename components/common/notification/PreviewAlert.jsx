@@ -27,5 +27,5 @@ export default function PreviewAlert({ preview }) {
   return null;
 }
 PreviewAlert.propTypes = {
-  preview: PropTypes.bool,
+  preview: PropTypes.object,
 };

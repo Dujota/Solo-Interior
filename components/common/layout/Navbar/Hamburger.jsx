@@ -3,7 +3,7 @@ import { Bar, HamburgerIcon } from './NavbarStyles';
 
 function Hamburger({ toggleMobileMenu, active }) {
   return (
-    <HamburgerIcon className="hamburger" onClick={toggleMobileMenu} active={active}>
+    <HamburgerIcon className="hamburger" onClick={toggleMobileMenu} active={active} aria-expanded={active}>
       <Bar className="bar" />
       <Bar className="bar" />
       <Bar className="bar" />

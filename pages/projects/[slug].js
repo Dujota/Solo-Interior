@@ -9,12 +9,11 @@ import { sanityClient, getClient, overlayDrafts } from '@lib/sanity.server';
 import { urlForImage, usePreviewSubscription } from '@lib/sanity';
 
 // Styled Comps
-import { Title } from 'components/common/titles';
+import { Title } from 'components/common/typography';
 
 // Components
 import Layout from 'components/common/layout';
 import Container from 'components/common/layout/Container';
-import PageHeader from 'components/common/headers/PageHeader';
 import ProjectHeader from 'components/projects/ProjectHeader';
 import SectionSeparator from 'components/common/layout/SectionSeparator';
 import PostBody from 'components/projects/PostBody';
@@ -39,7 +38,6 @@ const Project = ({ data = {}, preview = {} }) => {
   return (
     <Layout preview={preview}>
       <Container>
-        <PageHeader title={project?.slug} />
         {router.isFallback ? (
           <Title>Loading...</Title>
         ) : (

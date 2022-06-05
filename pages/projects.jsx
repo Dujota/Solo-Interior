@@ -9,7 +9,7 @@ import { sanityClient, getClient, overlayDrafts } from '@lib/sanity.server';
 import { urlForImage, usePreviewSubscription } from '@lib/sanity';
 
 // Styled Comps
-import { Title } from 'components/common/titles';
+import { Title, Heading } from 'components/common/typography';
 
 // Components
 import Layout from 'components/common/layout';
@@ -32,7 +32,19 @@ function Projects({ data = {}, preview = {} }) {
     enabled: preview && slug,
   });
 
-  return <div>Projects Index</div>;
+  return (
+    <Layout preview={false}>
+      <Container>
+        {router.isFallback ? (
+          <Title>Loading...</Title>
+        ) : (
+          <section>
+            <Heading>Projects</Heading>
+          </section>
+        )}
+      </Container>
+    </Layout>
+  );
 }
 
 export default Projects;

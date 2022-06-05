@@ -20,8 +20,8 @@ function Navbar(props) {
 
   return (
     <Header name="header">
-      <NavBar name="navbar">
-        <Logo href="#" label={LOGO_LABEL} />
+      <NavBar name="Menu" role="navigation">
+        <Logo href="/" label={LOGO_LABEL} />
         <NavMenu active={active} />
         <Hamburger active={active} toggleMobileMenu={toggleMobileMenu} />
       </NavBar>
