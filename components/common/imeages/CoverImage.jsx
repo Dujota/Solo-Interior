@@ -7,7 +7,15 @@ import { urlForImage } from '@lib/sanity';
 
 import { EmptyCoverImage } from '.';
 
-export default function CoverImage({ title, slug, image: source }) {
+export default function CoverImage({
+  title,
+  slug,
+  image: source,
+  size = {
+    width: 2000,
+    height: 1000,
+  },
+}) {
   const image = source ? (
     <div
       className={cn('shadow-small', {
@@ -16,10 +24,9 @@ export default function CoverImage({ title, slug, image: source }) {
     >
       <Image
         layout="responsive"
-        width={2000}
-        height={1000}
         alt={`Cover Image for ${title}`}
-        src={urlForImage(source).height(1000).width(2000).url()}
+        src={urlForImage(source).height(size.height).width(size.width).url()}
+        {...size}
       />
     </div>
   ) : (
@@ -40,4 +47,9 @@ export default function CoverImage({ title, slug, image: source }) {
   );
 }
 
-CoverImage.propTypes = { title: PropTypes.string, slug: PropTypes.string, image: PropTypes.string };
+CoverImage.propTypes = {
+  title: PropTypes.string,
+  slug: PropTypes.string,
+  image: PropTypes.string,
+  size: PropTypes.object,
+};

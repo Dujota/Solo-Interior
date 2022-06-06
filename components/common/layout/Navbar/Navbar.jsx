@@ -9,7 +9,7 @@ import NavMenu from './NavMenu';
 import { Header, NavBar } from './NavbarStyles';
 
 // TODO - ADD TO SANITY SITECONFIG
-const LOGO_LABEL = 'Solo Interior';
+const LOGO_LABEL = 'SI.';
 
 function Navbar(props) {
   const [active, setActive] = useState(false);

@@ -4,7 +4,12 @@ import PropTypes from 'prop-types';
 import { CardHeading, DateText, OtherText } from '@/components/common/typography';
 import Date from '@/components/common/Date';
 import CoverImage from './CoverImage';
-import { FullCardContentWrapper, FullCardHeaderWrapper, FullCardImageWrapper } from './projectCardStyles';
+import {
+  FullCardContentWrapper,
+  FullCardHeaderWrapper,
+  FullCardImageWrapper,
+  PreviewCardWrapper,
+} from './projectCardStyles';
 
 export default function ProjectPreview({ title, coverImage, publishedAt, excerpt, slug, full }) {
   if (full) {
@@ -36,20 +41,23 @@ export default function ProjectPreview({ title, coverImage, publishedAt, excerpt
   }
 
   return (
-    <div>
+    <PreviewCardWrapper className="hover:drop-shadow-lg">
       <div className="mb-5">
         <CoverImage slug={slug} title={title} image={coverImage} />
       </div>
-      <h3 className="text-3xl mb-3 leading-snug">
-        <Link href={`/projects/${slug}`}>
-          <a className="hover:underline">{title}</a>
-        </Link>
-      </h3>
-      <div className="text-lg mb-4">
-        <Date dateString={publishedAt} />
+      <div className="flex justify-between">
+        <div className="text-lg mb-4 font-bold">
+          <Date dateString={publishedAt} />
+        </div>
+        <h3 className="text-2xl mb-3 leading-snug font-bold max-w-[50%]">
+          <Link href={`/projects/${slug}`}>
+            <a className="hover:underline">{title}</a>
+          </Link>
+
+          <p className="text-lg leading-relaxed mb-4 font-semibold">{excerpt}</p>
+        </h3>
       </div>
-      <p className="text-lg leading-relaxed mb-4">{excerpt}</p>
-    </div>
+    </PreviewCardWrapper>
   );
 }
 

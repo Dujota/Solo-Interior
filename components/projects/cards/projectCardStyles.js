@@ -9,3 +9,5 @@ export const FullCardHeaderWrapper = styled.div`
   justify-content: space-between;
   align-items: flex-start;
 `;
+
+export const PreviewCardWrapper = styled.div``;
