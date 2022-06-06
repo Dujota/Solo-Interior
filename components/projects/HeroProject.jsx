@@ -21,7 +21,7 @@ export default function HeroProject({ title, heroImage, publishedAt, excerpt, sl
           <Date dateString={publishedAt} />
         </div>
 
-        <h3 className="mb-4 text-4xl font-bold lg:text-4xl leading-tight flex-column">
+        <h3 className="mb-4 text-4xl font-bold lg:text-4xl leading-tight flex flex-col">
           <Link href={`/projects/${slug}`}>
             <a className="hover:underline">{title}</a>
           </Link>

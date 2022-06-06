@@ -49,7 +49,7 @@ export default function ProjectPreview({ title, coverImage, publishedAt, excerpt
         <div className="text-lg mb-4 font-bold">
           <Date dateString={publishedAt} />
         </div>
-        <h3 className="text-2xl mb-3 leading-snug font-bold max-w-[50%]">
+        <h3 className="text-2xl mb-3 leading-snug font-bold lg:max-w-[70%] sm:max-w-[75%]">
           <Link href={`/projects/${slug}`}>
             <a className="hover:underline">{title}</a>
           </Link>
