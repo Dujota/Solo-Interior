@@ -13,6 +13,8 @@ a {
 
 * {
   box-sizing: border-box;
+  transition: all 0.3s ease-in-out;
+  -webkit-transition: all 0.3s ease-in-out;
 }
 
 li {
@@ -22,4 +24,9 @@ li {
 .hover-shadow:hover {
   -webkit-box-shadow: 0 0 11px rgba(33, 33, 33, .2);
   box-shadow: 0 0 11px rgba(33, 33, 33, .2);
+}
+
+.disable-scroll {
+  height: 100%;
+  overflow-y: hidden;
 }

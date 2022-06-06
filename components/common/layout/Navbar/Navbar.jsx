@@ -20,7 +20,7 @@ function Navbar(props) {
 
   return (
     <Header name="header px-20">
-      <NavBar name="Menu" role="navigation">
+      <NavBar name="Menu" role="navigation" active={active}>
         <Logo href="/" label={LOGO_LABEL} />
         <NavMenu active={active} />
         <Hamburger active={active} toggleMobileMenu={toggleMobileMenu} />

@@ -1,19 +1,44 @@
 import styled, { css } from 'styled-components';
 
 // border-bottom: 1px solid #e2e8f0;
-export const Header = styled.header``;
+export const Header = styled.header`
+  margin-bottom: 7rem;
+`;
 
 export const NavBar = styled.nav`
+  z-index: 999;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  opacity: 0.9;
+
   display: flex;
   justify-content: space-between;
   align-items: center;
+
   padding: 1rem 3rem;
+  background-color: #ffff;
+
+  @media only screen and (max-width: 768px) {
+    ${(props) =>
+      props.active &&
+      css`
+        opacity: 1;
+      `}
+  }
 `;
 
 export const NavLogo = styled.a`
   font-size: 2.5rem;
   font-weight: 800;
-  /* color: #482ff7; */
+  cursor: pointer;
+
+  ${(props) =>
+    props.active &&
+    css`
+      text-decoration: underlined;
+    `}
 `;
 
 export const NavMenuList = styled.ul`
@@ -26,9 +51,11 @@ export const NavMenuList = styled.ul`
     left: -100%;
     top: 5rem;
     flex-direction: column;
+    justify-content: flex-start;
     background-color: #fff;
+
     width: 100%;
-    border-radius: 10px;
+    padding: 2rem;
     text-align: center;
     transition: 0.3s;
     box-shadow: 0 10px 27px rgba(0, 0, 0, 0.05);
@@ -37,6 +64,7 @@ export const NavMenuList = styled.ul`
       props.active &&
       css`
         left: 0;
+        height: calc(100vh - 4rem);
       `}
   }
 `;
@@ -53,9 +81,7 @@ export const NavAnchor = styled.a`
   font-size: 1rem;
   font-weight: 700;
   cursor: pointer;
-
-  &:hover {
-    /* color: #482ff7; */
+   {
   }
 `;
 
