@@ -11,26 +11,28 @@ import HeroProject from '@/components/projects/HeroProject';
 import ProjectList from '@/components/projects/ProjectList';
 import AboutHome from '@/components/home/AboutHome';
 
-import styles from '../styles/Home.module.css';
-
 export async function getStaticProps({ params, preview = false }) {
   const allProjects = overlayDrafts(await getClient(preview).fetch(indexQuery));
 
   return {
     props: {
-      projects: allProjects,
+      data: { projects: allProjects },
       preview,
     },
     revalidate: 10,
   };
 }
 
-export default function Home({ projects, preview }) {
+export default function Home({ data = {}, preview }) {
+  const {
+    data: { projects },
+  } = usePreviewSubscription(indexQuery, {
+    initialData: data,
+    enabled: preview,
+  });
+
   const [heroProject, ...moreProjects] = projects;
 
-  // console.log(projects);
-  console.log('heroProject', heroProject);
-  console.log('moreProjects', moreProjects);
   return (
     <Layout preview={preview}>
       <Head>
