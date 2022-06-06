@@ -22,12 +22,12 @@ export const MainText = styled.span`
 `;
 
 export const OtherText = styled.span`
-  font-size: 1.5rem;
+  font-size: 1rem;
   font-weight: 700; // bold
 `;
 
 export const CardHeading = styled.h3`
-  font-size: 3.5rem;
+  font-size: 2rem;
   font-weight: 900; // heavy
 `;
 

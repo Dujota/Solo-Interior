@@ -55,7 +55,7 @@ export default function ProjectPreview({ title, coverImage, publishedAt, excerpt
             <a className="hover:underline">{title}</a>
           </Link>
 
-          <p className="text-lg leading-relaxed mb-4 font-semibold">{excerpt}</p>
+          <p className="text-base leading-relaxed mb-4 font-semibold">{excerpt}</p>
         </h3>
       </PreviewCardContentWrapper>
     </PreviewCardWrapper>
