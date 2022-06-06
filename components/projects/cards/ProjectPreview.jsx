@@ -9,6 +9,7 @@ import {
   FullCardHeaderWrapper,
   FullCardImageWrapper,
   PreviewCardWrapper,
+  PreviewCardContentWrapper,
 } from './projectCardStyles';
 
 export default function ProjectPreview({ title, coverImage, publishedAt, excerpt, slug, full }) {
@@ -45,7 +46,7 @@ export default function ProjectPreview({ title, coverImage, publishedAt, excerpt
       <div className="mb-5">
         <CoverImage slug={slug} title={title} image={coverImage} />
       </div>
-      <div className="flex justify-between">
+      <PreviewCardContentWrapper className="flex justify-between">
         <div className="text-lg mb-4 font-bold">
           <Date dateString={publishedAt} />
         </div>
@@ -56,7 +57,7 @@ export default function ProjectPreview({ title, coverImage, publishedAt, excerpt
 
           <p className="text-lg leading-relaxed mb-4 font-semibold">{excerpt}</p>
         </h3>
-      </div>
+      </PreviewCardContentWrapper>
     </PreviewCardWrapper>
   );
 }

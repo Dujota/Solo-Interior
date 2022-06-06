@@ -11,3 +11,13 @@ export const FullCardHeaderWrapper = styled.div`
 `;
 
 export const PreviewCardWrapper = styled.div``;
+
+export const PreviewCardContentWrapper = styled.div`
+  display: flex;
+  justify-content: space-between;
+
+  @media (min-width: 200px) {
+    justify-content: start;
+    flex-direction: column;
+  }
+`;
