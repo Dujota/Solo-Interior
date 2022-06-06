@@ -19,7 +19,7 @@ function Navbar(props) {
   };
 
   return (
-    <Header name="header">
+    <Header name="header px-20">
       <NavBar name="Menu" role="navigation">
         <Logo href="/" label={LOGO_LABEL} />
         <NavMenu active={active} />
