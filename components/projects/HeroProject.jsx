@@ -16,7 +16,7 @@ export default function HeroProject({ title, heroImage, publishedAt, excerpt, sl
           }}
         />
       </div>
-      <div className="md:grid md:grid-cols-2 md:gap-x-16 lg:gap-x-8 mb-20 md:mb-28">
+      <div className="md:grid md:grid-cols-2 md:gap-x-16 lg:gap-x-8 mb-4 md:mb-5">
         <div className="mb-4 md:mb-0 text-lg font-bold">
           <Date dateString={publishedAt} />
         </div>

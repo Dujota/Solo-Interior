@@ -8,8 +8,9 @@ import sanityClient, { getClient, overlayDrafts } from '@lib/sanity.server';
 import Layout from '@/components/common/layout';
 import Container from '@/components/common/layout/Container';
 import HeroProject from '@/components/projects/HeroProject';
-
 import ProjectList from '@/components/projects/ProjectList';
+import AboutHome from '@/components/home/AboutHome';
+
 import styles from '../styles/Home.module.css';
 
 export async function getStaticProps({ params, preview = false }) {
@@ -37,10 +38,7 @@ export default function Home({ projects, preview }) {
       </Head>
       <Container>
         <HeroProject {...heroProject} />
-        <p>
-          In maximus erat ultricies leo dapibus, sed elementum arcu ornare. Phasellus malesuada mi non quam pellentesque
-          sollicitudin. Proin maximus dolor non nisi sollicitudin, malesuada venenatis felis euismod.
-        </p>
+        <AboutHome />
         <ProjectList projects={moreProjects} />
       </Container>
     </Layout>
