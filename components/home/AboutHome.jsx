@@ -10,16 +10,15 @@ export default function AboutHome() {
         elit. Massa placerat duis ultricies lacus sed turpis tincidunt. A erat nam at lectus urna duis. Volutpat lacus
         laoreet non curabitur. Maecenas ultricies mi eget mauris pharetra et ultrices neque. Mauris rhoncus aenean vel
         elit scelerisque mauris pellentesque pulvinar pellentesque. Aliquam ut porttitor leo a diam sollicitudin tempor.
+        <br />
+        <br />
         Maecenas volutpat blandit aliquam etiam erat. Cursus mattis molestie a iaculis at erat pellentesque.
         Pellentesque eu tincidunt tortor aliquam. Purus in mollis nunc sed id semper. Massa placerat duis ultricies
         lacus sed turpis tincidunt. Mauris pharetra et ultrices neque ornare aenean. Massa id neque aliquam vestibulum
         morbi. Arcu cursus euismod quis viverra nibh cras pulvinar mattis. Euismod nisi porta lorem mollis. Donec
         pretium vulputate sapien nec sagittis aliquam malesuada. Eu facilisis sed odio morbi quis. Dolor sed viverra
         ipsum nunc aliquet. Augue eget arcu dictum varius. Tincidunt nunc pulvinar sapien et ligula ullamcorper
-        malesuada proin libero. Magna etiam tempor orci eu lobortis elementum nibh tellus molestie. Venenatis cras sed
-        felis eget. Ornare massa eget egestas purus. Volutpat maecenas volutpat blandit aliquam etiam erat velit
-        scelerisque. In vitae turpis massa sed elementum. At volutpat diam ut venenatis. Sed vulputate mi sit amet
-        mauris. Eleifend donec pretium vulputate sapien nec sagittis.
+        malesuada proin libero. Magna etiam tempor orci eu lobortis elementum nibh tellus molestie.
       </p>
 
       <Link href="/about">

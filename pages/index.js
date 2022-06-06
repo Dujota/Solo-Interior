@@ -10,6 +10,7 @@ import Container from '@/components/common/layout/Container';
 import HeroProject from '@/components/projects/HeroProject';
 import ProjectList from '@/components/projects/ProjectList';
 import AboutHome from '@/components/home/AboutHome';
+import SectionSeparator from '@/components/common/layout/SectionSeparator';
 
 export async function getStaticProps({ params, preview = false }) {
   const allProjects = overlayDrafts(await getClient(preview).fetch(indexQuery));
@@ -40,7 +41,9 @@ export default function Home({ data = {}, preview }) {
       </Head>
       <Container>
         <HeroProject {...heroProject} />
+        <SectionSeparator />
         <AboutHome />
+        <SectionSeparator />
         <ProjectList projects={moreProjects} />
       </Container>
     </Layout>

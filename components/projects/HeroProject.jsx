@@ -5,7 +5,7 @@ import CoverImage from '../common/imeages/CoverImage';
 export default function HeroProject({ title, heroImage, publishedAt, excerpt, slug }) {
   return (
     <section className="hover:drop-shadow-md">
-      <div className="mb-8 md:mb-16">
+      <div className="mb-4 md:mb-8">
         <CoverImage
           slug={slug}
           title={title}
@@ -16,7 +16,7 @@ export default function HeroProject({ title, heroImage, publishedAt, excerpt, sl
           }}
         />
       </div>
-      <div className="md:grid md:grid-cols-2 md:gap-x-16 lg:gap-x-8 mb-4 md:mb-5">
+      <div className="md:grid md:grid-cols-2 md:gap-x-4 lg:gap-x-2 mb-4 md:mb-5">
         <div className="mb-4 md:mb-0 text-lg font-bold">
           <Date dateString={publishedAt} />
         </div>

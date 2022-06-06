@@ -1,8 +1,7 @@
 import styled, { css } from 'styled-components';
 
-export const Header = styled.header`
-  border-bottom: 1px solid #e2e8f0;
-`;
+// border-bottom: 1px solid #e2e8f0;
+export const Header = styled.header``;
 
 export const NavBar = styled.nav`
   display: flex;
