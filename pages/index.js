@@ -41,9 +41,9 @@ export default function Home({ data = {}, preview }) {
       </Head>
       <Container>
         <HeroProject {...heroProject} />
-        <SectionSeparator />
+        <SectionSeparator top={10} bottom={10} />
         <AboutHome />
-        <SectionSeparator />
+        <SectionSeparator top={24} bottom={10} />
         <ProjectList projects={moreProjects} />
       </Container>
     </Layout>
