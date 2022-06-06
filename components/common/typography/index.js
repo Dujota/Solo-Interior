@@ -11,6 +11,17 @@ export const Title = styled.h1`
   font-weight: bold;
 `;
 
+export const SubTitle = styled.h2`
+  margin: 0;
+  display: block;
+  font-size: 2em;
+  margin-top: 0.67em;
+  margin-bottom: 0.67em;
+  margin-left: 0;
+  margin-right: 0;
+  font-weight: bold;
+`;
+
 export const Heading = styled.h1`
   font-size: 5rem;
   font-weight: 900; // heavy

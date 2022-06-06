@@ -14,6 +14,7 @@
     "@portabletext/react": "^1.0.6",
     "@sanity/image-url": "^1.0.1",
     "autoprefixer": "^10.4.7",
+    "bcp47": "^1.1.2",
     "classnames": "^2.3.1",
     "date-fns": "^2.28.0",
     "eslint-import-resolver-alias": "^1.1.2",

@@ -1,9 +1,10 @@
 import S from "@sanity/desk-tool/structure-builder";
 import { HiOutlineCog } from "react-icons/hi";
+import { BsPersonBadge } from "react-icons/bs";
 
 // Add Schema type to hidden
 const hiddenDocTypes = listItem =>
-    !["siteconfig",].includes(
+    !["siteconfig", "about", "home"].includes(
         listItem.getId()
     );
 
@@ -20,6 +21,14 @@ export default () =>
                     S.editor()
                         .schemaType("siteconfig")
                         .documentId("siteconfig")
+                ),
+            S.listItem()
+                .title("About Page")
+                .icon(BsPersonBadge)
+                .child(
+                    S.editor()
+                        .schemaType("about")
+                        .documentId("about")
                 ),
             // Add a visual divider (optional)
             // S.divider(),

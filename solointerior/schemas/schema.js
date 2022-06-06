@@ -2,14 +2,25 @@
 import createSchema from 'part:@sanity/base/schema-creator'
 
 // Then import schema types from any plugins that might expose them
-import schemaTypes from 'all:part:@sanity/base/schema-type'
+import schemaTypes from 'all:part:@sanity/base/schema-type';
 
-// Types
-import siteConfig from './siteConfig'
-import project from './project'
-import mainImage from './mainImage'
-import contentBlock from './contentBlock'
-import keywords from './keywords'
+// Document Types
+import siteConfig from './documents/siteConfig';
+import project from './documents/project';
+import about from './documents/about';
+import route from './documents/route';
+
+// Object Types
+import mainImage from './objects/mainImage';
+import contentBlock from './objects/contentBlock';
+import keywords from './objects/keywords';
+import cta from './objects/cta';
+import simplePortableText from './objects/simplePortableText';
+import portableText from './objects/portableText';
+import internalLink from './objects/internalLink';
+import link from './objects/link';
+import embedHTML from './objects/embedHTML';
+import figure from './objects/figure';
 
 // Then we give our schema to the builder and provide the result to Sanity
 export default createSchema({
@@ -20,10 +31,19 @@ export default createSchema({
 
   types: schemaTypes.concat([
     /* Your types here! */
+    figure,
+    internalLink,
+    link,
+    embedHTML,
+    cta,
     siteConfig,
     project,
     mainImage,
     contentBlock,
-    keywords
+    keywords,
+    about,
+    route,
+    simplePortableText,
+    portableText,
   ]),
 })
