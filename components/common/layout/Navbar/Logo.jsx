@@ -1,11 +1,14 @@
+import Link from 'next/link';
 import PropTypes from 'prop-types';
 import { NavLogo } from './NavbarStyles';
 
 function Logo({ href, label }) {
   return (
-    <NavLogo href={href} className="nav-logo" name={label}>
-      {label}
-    </NavLogo>
+    <Link href={href}>
+      <NavLogo className="nav-logo" name={label} aria-label={label}>
+        {label}
+      </NavLogo>
+    </Link>
   );
 }
 

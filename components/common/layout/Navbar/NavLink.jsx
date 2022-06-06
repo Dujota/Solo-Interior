@@ -1,11 +1,14 @@
+import Link from 'next/link';
 import PropTypes from 'prop-types';
-import { NavItem, Link } from './NavbarStyles';
+import { NavItem, NavAnchor } from './NavbarStyles';
 
 function NavLink({ href, label }) {
   return (
     <NavItem className="nav-item">
-      <Link href={href} className="nav-link">
-        {label}
+      <Link href={href}>
+        <NavAnchor aria-label={label} className="nav-link hover:underline">
+          {label}
+        </NavAnchor>
       </Link>
     </NavItem>
   );

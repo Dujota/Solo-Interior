@@ -11,9 +11,9 @@ export const NavBar = styled.nav`
 `;
 
 export const NavLogo = styled.a`
-  font-size: 2.1rem;
-  font-weight: 500;
-  color: #482ff7;
+  font-size: 2.5rem;
+  font-weight: 800;
+  /* color: #482ff7; */
 `;
 
 export const NavMenuList = styled.ul`
@@ -49,13 +49,13 @@ export const NavItem = styled.li`
   }
 `;
 
-export const Link = styled.a`
-  font-size: 1.6rem;
-  font-weight: 400;
-  color: #475569;
+export const NavAnchor = styled.a`
+  font-size: 1rem;
+  font-weight: 700;
+  cursor: pointer;
 
   &:hover {
-    color: #482ff7;
+    /* color: #482ff7; */
   }
 `;
 
