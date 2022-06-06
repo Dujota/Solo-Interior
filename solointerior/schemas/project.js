@@ -79,7 +79,11 @@ export default {
         {
             name: "publishedAt",
             title: "Published at",
-            type: "datetime"
+            // type: "datetime",
+            type: "date",
+            options:{
+                dateFormat: 'YYYY-MM-DD',
+            }
         }
     ],
 

@@ -1,9 +1,13 @@
-import { parseISO, format } from 'date-fns';
+import format from 'date-fns/format';
+import parseISO from 'date-fns/parseISO';
+
 import PropTypes from 'prop-types';
 
 export default function Date({ dateString }) {
   const date = parseISO(dateString);
-  return <time dateTime={dateString}>{format(date, 'LLLL	d, yyyy')}</time>;
+  const year = format(date, 'yyyy');
+
+  return <time dateTime={dateString}>{year}</time>;
 }
 
 Date.propTypes = { dateString: PropTypes.string };

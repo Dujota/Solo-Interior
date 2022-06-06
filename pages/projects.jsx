@@ -18,31 +18,35 @@ import PageHeader from 'components/common/headers/PageHeader';
 import ProjectHeader from 'components/projects/ProjectHeader';
 import SectionSeparator from 'components/common/layout/SectionSeparator';
 import PostBody from 'components/projects/PostBody';
+import ProjectList from '@/components/projects/ProjectList';
+
+export async function getStaticProps({ params, preview = false }) {
+  const allProjects = overlayDrafts(await getClient(preview).fetch(indexQuery));
+
+  return {
+    props: {
+      data: {
+        projects: allProjects,
+      },
+      preview,
+    },
+    revalidate: 10,
+  };
+}
 
 function Projects({ data = {}, preview = {} }) {
   const router = useRouter();
 
-  const slug = data?.projects?.slug;
-
   const {
     data: { projects },
   } = usePreviewSubscription(indexQuery, {
-    params: { slug },
     initialData: data,
-    enabled: preview && slug,
+    enabled: preview,
   });
-
+  console.log(projects);
   return (
     <Layout preview={false}>
-      <Container>
-        {router.isFallback ? (
-          <Title>Loading...</Title>
-        ) : (
-          <section>
-            <Heading>Projects</Heading>
-          </section>
-        )}
-      </Container>
+      <Container>{router.isFallback ? <Title>Loading...</Title> : <ProjectList projects={projects} />}</Container>
     </Layout>
   );
 }

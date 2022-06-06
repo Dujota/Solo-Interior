@@ -18,10 +18,21 @@ export const Heading = styled.h1`
 
 export const MainText = styled.span`
   font-size: 2.5rem;
-  font-weight: 600; // heavy
+  font-weight: 600; // semi-bold
 `;
 
-export const otherText = styled.span`
+export const OtherText = styled.span`
   font-size: 1.5rem;
-  font-weight: 700;
+  font-weight: 700; // bold
+`;
+
+export const CardHeading = styled.h3`
+  font-size: 3.5rem;
+  font-weight: 900; // heavy
+`;
+
+export const DateText = styled.span`
+  font-size: 1.25rem; /* 20px */
+  line-height: 1.75rem; /* 28px */
+  font-weight: bold;
 `;

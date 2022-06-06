@@ -23,7 +23,7 @@ export async function getStaticProps({ params, preview = false }) {
 }
 
 export default function Home({ projects, preview }) {
-  const [heroProject, moreProjects] = projects;
+  const [heroProject, ...moreProjects] = projects;
 
   // console.log(projects);
   console.log('heroProject', heroProject);
