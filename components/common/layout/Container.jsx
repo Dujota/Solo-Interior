@@ -5,5 +5,5 @@ export default function Container({ children }) {
 }
 
 Container.propTypes = {
-  children: PropTypes.array,
+  children: PropTypes.any,
 };

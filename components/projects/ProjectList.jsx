@@ -8,7 +8,7 @@ function ProjectList({ projects = [] }) {
   const isIndex = router.asPath === '/projects';
 
   return (
-    <section className="grid grid-cols-1 md:grid-cols-2 md:gap-x-8 lg:gap-x-10 gap-y-20 md:gap-y-10 mb-32 mt-32">
+    <section className="grid grid-cols-1 md:grid-cols-2 md:gap-x-8 lg:gap-x-10 gap-y-20 md:gap-y-10 mb-32 mt-32 xs:gap-y-5">
       {projects.map(({ slug, title, heroImage, publishedAt, excerpt }) => (
         <ProjectPreview
           key={slug}
