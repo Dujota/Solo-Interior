@@ -44,7 +44,7 @@ export default function ProjectPreview({ title, coverImage, publishedAt, excerpt
   return (
     <PreviewCardWrapper className="hover:drop-shadow-lg">
       <div className="mb-5">
-        <CoverImage slug={slug} title={title} image={coverImage} />
+        <PreviewCoverImage slug={slug} title={title} image={coverImage} />
       </div>
       <PreviewCardContentWrapper className="flex justify-between">
         <div className="text-lg mb-4 font-bold">
