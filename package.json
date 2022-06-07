@@ -3,9 +3,10 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
-    "dev": "concurrently \"next --port $PORT\" \"cd studio && sanity start\"",
-    "build": "echo 'Building Sanity to public/studio' && cd studio && sanity build ../public/studio -y && cd .. && next build",
-    "start": "vercel dev",
+    "dev": "next dev",
+    "prebuild": "echo 'Building Sanity to public/solointerior' && cd solointerior && yarn && npx @sanity/cli build ../public/solointerior -y && echo 'Done'",
+    "build": "next build",
+    "start": "next start",
     "lint": "next lint",
     "sanity": "cd solointerior && sanity start"
   },
