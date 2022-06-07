@@ -2,11 +2,11 @@
   "root": true,
   "project": {
     "name": "solointerior",
-    "basePath": "/studio"
+    "basePath": "/solointerior"
   },
   "api": {
     "projectId": "xp6httom",
-    "dataset": "production"
+    "dataset": "solointerior"
   },
   "plugins": [
     "@sanity/base",
@@ -18,7 +18,10 @@
     "development": {
       "plugins": [
         "@sanity/vision"
-      ]
+      ],
+      "api": {
+        "dataset": "production"
+      }
     }
   },
   "parts": [
