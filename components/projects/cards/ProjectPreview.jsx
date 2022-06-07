@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 
 import { CardHeading, DateText, OtherText } from '@/components/common/typography';
 import Date from '@/components/common/Date';
-import CoverImage from './CoverImage';
+import PreviewCoverImage from './PreviewCoverImage';
 import {
   FullCardContentWrapper,
   FullCardHeaderWrapper,
@@ -17,7 +17,7 @@ export default function ProjectPreview({ title, coverImage, publishedAt, excerpt
     return (
       <>
         <FullCardImageWrapper className="mb-5">
-          <CoverImage slug={slug} title={title} image={coverImage} />
+          <PreviewCoverImage slug={slug} title={title} image={coverImage} />
         </FullCardImageWrapper>
 
         <FullCardContentWrapper className="mb-5">
