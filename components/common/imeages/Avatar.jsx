@@ -1,6 +1,6 @@
 import Image from 'next/image';
 import PropTypes from 'prop-types';
-import { urlForImage } from '@lib/sanity';
+import { urlForImage } from 'lib/sanity';
 
 export default function Avatar({ name, picture }) {
   return (

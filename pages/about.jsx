@@ -3,9 +3,9 @@ import { useRouter } from 'next/router';
 import ErrorPage from 'next/error';
 
 // Sanity
-import { indexQuery } from '@lib/queries/about';
-import { sanityClient, getClient, overlayDrafts } from '@lib/sanity.server';
-import { PortableText, urlForImage, usePreviewSubscription } from '@lib/sanity';
+import { indexQuery } from 'lib/queries/about';
+import { sanityClient, getClient, overlayDrafts } from 'lib/sanity.server';
+import { PortableText, urlForImage, usePreviewSubscription } from 'lib/sanity';
 
 // Styled Comps
 import { Heading, Title } from '@/components/common/typography';

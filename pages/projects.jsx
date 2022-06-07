@@ -4,9 +4,9 @@ import ErrorPage from 'next/error';
 import Head from 'next/head';
 
 // Sanity
-import { indexQuery } from '@lib/queries/project';
-import { sanityClient, getClient, overlayDrafts } from '@lib/sanity.server';
-import { urlForImage, usePreviewSubscription } from '@lib/sanity';
+import { indexQuery } from 'lib/queries/project';
+import { sanityClient, getClient, overlayDrafts } from 'lib/sanity.server';
+import { urlForImage, usePreviewSubscription } from 'lib/sanity';
 
 // Styled Comps
 import { Title } from '@/components/common/typography';

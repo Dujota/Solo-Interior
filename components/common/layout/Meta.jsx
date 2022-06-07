@@ -1,6 +1,6 @@
 import Head from 'next/head';
 // TODO: migrate meta to sanity cms site settings
-import { META_DESCRIPTION } from '@lib/constants';
+import { META_DESCRIPTION } from 'lib/constants';
 
 export default function Meta() {
   return (

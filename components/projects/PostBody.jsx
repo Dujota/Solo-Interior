@@ -1,4 +1,4 @@
-import { PortableText } from '@lib/sanity';
+import { PortableText } from 'lib/sanity';
 import markdownStyles from './markdown-styles.module.css';
 
 export default function PostBody({ content }) {

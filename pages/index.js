@@ -1,9 +1,9 @@
 import Head from 'next/head';
 import Image from 'next/image';
 
-import { indexQuery } from '@lib/queries/project';
-import { usePreviewSubscription, PortableText } from '@lib/sanity';
-import sanityClient, { getClient, overlayDrafts } from '@lib/sanity.server';
+import { indexQuery } from 'lib/queries/project';
+import { usePreviewSubscription, PortableText } from 'lib/sanity';
+import sanityClient, { getClient, overlayDrafts } from 'lib/sanity.server';
 
 import Layout from '@/components/common/layout';
 import Container from '@/components/common/layout/Container';
