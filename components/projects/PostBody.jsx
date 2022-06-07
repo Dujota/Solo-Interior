@@ -12,5 +12,5 @@ export default function PostBody({ content }) {
 }
 
 PostBody.propTypes = {
-  content: PropTypes.string,
+  content: PropTypes.array,
 };

@@ -1,9 +1,13 @@
 import PropTypes from 'prop-types';
 
+import useImageSize from '@/components/hooks/utils/useImageSize';
+import { DEFAULT_PROJECT_IMAGE_SIZE } from '@lib/constants';
 import CoverImage from '../common/imeages/CoverImage';
 import ProjectTitle from './ProjectTitle';
 
-export default function ProjectHeader({ title, coverImage, date }) {
+export default function ProjectHeader({ title, coverImage }) {
+  const size = useImageSize(DEFAULT_PROJECT_IMAGE_SIZE);
+
   return (
     <>
       <ProjectTitle>{title}</ProjectTitle>
@@ -11,7 +15,7 @@ export default function ProjectHeader({ title, coverImage, date }) {
         <Avatar name={author.name} picture={author.picture} />
       </div> */}
       <div className="mb-8 md:mb-16 sm:mx-0">
-        <CoverImage title={title} image={coverImage} />
+        <CoverImage title={title} image={coverImage} size={size} />
       </div>
       {/* TODO: Remove? as there is only one author */}
       {/* <div className="max-w-2xl mx-auto">
@@ -26,4 +30,4 @@ export default function ProjectHeader({ title, coverImage, date }) {
   );
 }
 
-ProjectHeader.propTypes = { title: PropTypes.string, coverImage: PropTypes.object, date: PropTypes.string };
+ProjectHeader.propTypes = { title: PropTypes.string, coverImage: PropTypes.object };
