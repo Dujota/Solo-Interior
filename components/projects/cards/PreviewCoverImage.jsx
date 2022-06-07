@@ -18,6 +18,7 @@ export default function PreviewCoverImage({ title, slug, image: source }) {
         height={1000}
         alt={`Cover Image for ${title}`}
         quality={100}
+        placeholder="blur"
         src={urlForImage(source).height(1000).width(2000).url()}
       />
     </div>

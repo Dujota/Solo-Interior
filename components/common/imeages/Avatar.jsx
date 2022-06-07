@@ -9,6 +9,7 @@ export default function Avatar({ name, picture }) {
         <Image
           src={urlForImage(picture).height(96).width(96).fit('crop').url()}
           layout="fill"
+          placeholder="blur"
           className="rounded-full"
           alt={name}
         />
