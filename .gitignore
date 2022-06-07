@@ -2,7 +2,7 @@
 
 # dependencies
 /node_modules
-/solointerior/node_modules
+/studio/node_modules
 /.pnp
 .pnp.js
 
@@ -33,4 +33,7 @@ yarn-error.log*
 .vercel
 
 #sanity build
-public/solointerior/
+public/studio/
+
+# VS Code
+.vscode/

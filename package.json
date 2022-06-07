@@ -4,11 +4,11 @@
   "private": true,
   "scripts": {
     "dev": "next dev",
-    "prebuild": "echo 'Building Sanity to public/solointerior' && cd solointerior && yarn && npx @sanity/cli build ../public/solointerior -y && echo 'Done'",
+    "prebuild": "echo 'Building Sanity to public/studio' && cd studio && yarn && npx @sanity/cli build ../public/studio -y && echo 'Done'",
     "build": "next build",
     "start": "next start",
     "lint": "next lint",
-    "sanity": "cd solointerior && sanity start"
+    "sanity": "cd studio && sanity start"
   },
   "dependencies": {
     "@portabletext/react": "^1.0.6",

@@ -1,8 +1,8 @@
 {
   "root": true,
   "project": {
-    "name": "solointerior",
-    "basePath": "/solointerior"
+    "name": "SoloInterior",
+    "basePath": "/studio"
   },
   "api": {
     "projectId": "xp6httom",

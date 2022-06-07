@@ -26,7 +26,7 @@ export default function CoverImage({
         layout="responsive"
         alt={`Cover Image for ${title}`}
         quality={100}
-        placeholder="blur"
+        // placeholder="blur"
         src={urlForImage(source).height(size.height).width(size.width).url()}
         {...size}
       />

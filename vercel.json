@@ -2,7 +2,7 @@
     "rewrites": [
         {
             "source": "/studio/(.*)",
-            "destination": "/solointerior/index.html"
+            "destination": "/studio/index.html"
         }
     ]
 }
