@@ -1,3 +1,4 @@
+import PropTypes from 'prop-types';
 import Link from 'next/link';
 import Date from '../common/Date';
 import CoverImage from '../common/imeages/CoverImage';
@@ -32,3 +33,11 @@ export default function HeroProject({ title, heroImage, publishedAt, excerpt, sl
     </section>
   );
 }
+
+HeroProject.propTypes = {
+  title: PropTypes.string,
+  heroImage: PropTypes.object,
+  publishedAt: PropTypes.string,
+  excerpt: PropTypes.string,
+  slug: PropTypes.string,
+};

@@ -1,21 +1,18 @@
+import PropTypes from 'prop-types';
 // Next
 import { useRouter } from 'next/router';
 import ErrorPage from 'next/error';
-
 // Sanity
 import { indexQuery } from 'lib/queries/about';
-import { sanityClient, getClient, overlayDrafts } from 'lib/sanity.server';
-import { PortableText, urlForImage, usePreviewSubscription } from 'lib/sanity';
+import { getClient } from 'lib/sanity.server';
+import { usePreviewSubscription } from 'lib/sanity';
 
 // Styled Comps
-import { Heading, Title } from '@/components/common/typography';
+import { Title } from '@/components/common/typography';
 
 // Components
 import Layout from '@/components/common/layout';
 import Container from '@/components/common/layout/Container';
-import PageHeader from '@/components/common/headers/PageHeader';
-import ProjectHeader from '@/components/projects/ProjectHeader';
-import SectionSeparator from '@/components/common/layout/SectionSeparator';
 import PostBody from '@/components/projects/PostBody';
 import Header from '@/components/about/Header';
 
@@ -33,7 +30,7 @@ export async function getStaticProps({ params, preview = false }) {
   };
 }
 
-function About({ data = {}, preview = {} }) {
+function About({ data = {}, preview }) {
   const router = useRouter();
 
   const slug = data?.aboutPage?.slug;
@@ -48,8 +45,6 @@ function About({ data = {}, preview = {} }) {
   if (!router.isFallback && !slug) {
     return <ErrorPage statusCode={404} />;
   }
-
-  console.log(aboutPage);
 
   return (
     <Layout preview={false}>
@@ -69,3 +64,8 @@ function About({ data = {}, preview = {} }) {
 }
 
 export default About;
+
+About.propTypes = {
+  data: PropTypes.object,
+  preview: PropTypes.bool,
+};

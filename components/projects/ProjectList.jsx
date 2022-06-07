@@ -24,6 +24,6 @@ function ProjectList({ projects = [] }) {
   );
 }
 
-ProjectList.propTypes = { projects: PropTypes.array, full: PropTypes.bool };
+ProjectList.propTypes = { projects: PropTypes.array };
 
 export default ProjectList;

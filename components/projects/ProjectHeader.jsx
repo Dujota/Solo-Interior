@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import CoverImage from '../common/imeages/CoverImage';
 import ProjectTitle from './ProjectTitle';
 
-export default function ProjectHeader({ title, coverImage, date, author }) {
+export default function ProjectHeader({ title, coverImage, date }) {
   return (
     <>
       <ProjectTitle>{title}</ProjectTitle>

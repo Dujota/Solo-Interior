@@ -1,3 +1,4 @@
+import PropTypes from 'prop-types';
 import PreviewAlert from '../notification/PreviewAlert';
 import Footer from './Footer';
 import Meta from './Meta';
@@ -16,3 +17,8 @@ export default function Layout({ preview, children }) {
     </>
   );
 }
+
+Layout.propTypes = {
+  children: PropTypes.element,
+  preview: PropTypes.bool,
+};

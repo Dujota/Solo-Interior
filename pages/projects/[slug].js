@@ -1,3 +1,5 @@
+import PropTypes from 'prop-types';
+
 // Next
 import { useRouter } from 'next/router';
 import ErrorPage from 'next/error';
@@ -18,7 +20,7 @@ import ProjectHeader from 'components/projects/ProjectHeader';
 import SectionSeparator from 'components/common/layout/SectionSeparator';
 import PostBody from 'components/projects/PostBody';
 
-const Project = ({ data = {}, preview = {} }) => {
+const Project = ({ data = {}, preview }) => {
   const router = useRouter();
 
   const slug = data?.project?.slug;
@@ -116,3 +118,8 @@ export const getStaticPaths = async () => {
   };
 };
 export default Project;
+
+Project.propTypes = {
+  data: PropTypes.object,
+  preview: PropTypes.bool,
+};

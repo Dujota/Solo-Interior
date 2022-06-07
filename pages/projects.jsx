@@ -1,3 +1,5 @@
+import PropTypes from 'prop-types';
+
 // Next
 import { useRouter } from 'next/router';
 import ErrorPage from 'next/error';
@@ -30,7 +32,7 @@ export async function getStaticProps({ params, preview = false }) {
   };
 }
 
-function Projects({ data = {}, preview = {} }) {
+function Projects({ data = {}, preview }) {
   const router = useRouter();
 
   const {
@@ -48,3 +50,8 @@ function Projects({ data = {}, preview = {} }) {
 }
 
 export default Projects;
+
+Projects.propTypes = {
+  data: PropTypes.object,
+  preview: PropTypes.bool,
+};

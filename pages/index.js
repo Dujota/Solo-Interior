@@ -1,9 +1,9 @@
+import PropTypes from 'prop-types';
 import Head from 'next/head';
-import Image from 'next/image';
 
 import { indexQuery } from 'lib/queries/project';
-import { usePreviewSubscription, PortableText } from 'lib/sanity';
-import sanityClient, { getClient, overlayDrafts } from 'lib/sanity.server';
+import { usePreviewSubscription } from 'lib/sanity';
+import { getClient, overlayDrafts } from 'lib/sanity.server';
 
 import Layout from '@/components/common/layout';
 import Container from '@/components/common/layout/Container';
@@ -49,3 +49,8 @@ export default function Home({ data = {}, preview }) {
     </Layout>
   );
 }
+
+Home.propTypes = {
+  data: PropTypes.object,
+  preview: PropTypes.bool,
+};

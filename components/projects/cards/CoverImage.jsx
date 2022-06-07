@@ -1,3 +1,5 @@
+import PropTypes from 'prop-types';
+
 import cn from 'classnames';
 import Image from 'next/image';
 import Link from 'next/link';
@@ -34,3 +36,5 @@ export default function CoverImage({ title, slug, image: source }) {
     </div>
   );
 }
+
+CoverImage.propTypes = { title: PropTypes.string, slug: PropTypes.string, image: PropTypes.string };

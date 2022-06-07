@@ -1,3 +1,4 @@
+import PropTypes from 'prop-types';
 // Next
 import { useRouter } from 'next/router';
 import ErrorPage from 'next/error';
@@ -14,15 +15,9 @@ import { Heading, Title } from 'components/common/typography';
 // Components
 import Layout from 'components/common/layout';
 import Container from 'components/common/layout/Container';
-import PageHeader from 'components/common/headers/PageHeader';
-import ProjectHeader from 'components/projects/ProjectHeader';
-import SectionSeparator from 'components/common/layout/SectionSeparator';
-import PostBody from 'components/projects/PostBody';
 
-function Contact({ data = {}, preview = {} }) {
+function Contact({ data = {}, preview }) {
   const router = useRouter();
-
-  const slug = data?.projects?.slug;
 
   // PULL DATA FROM SANITY CONFIG
   // const {
@@ -33,9 +28,9 @@ function Contact({ data = {}, preview = {} }) {
   //   enabled: preview && slug,
   // });
 
-  // if (!router.isFallback && !slug) {
-  //   return <ErrorPage statusCode={404} />;
-  // }
+  if (!router.isFallback) {
+    return <ErrorPage statusCode={404} />;
+  }
 
   return (
     <Layout preview={false}>
@@ -53,3 +48,8 @@ function Contact({ data = {}, preview = {} }) {
 }
 
 export default Contact;
+
+Contact.propTypes = {
+  data: PropTypes.object,
+  preview: PropTypes.bool,
+};

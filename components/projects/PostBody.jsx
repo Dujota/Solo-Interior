@@ -1,3 +1,5 @@
+import PropTypes from 'prop-types';
+
 import { PortableText } from 'lib/sanity';
 import markdownStyles from './markdown-styles.module.css';
 
@@ -8,3 +10,7 @@ export default function PostBody({ content }) {
     </div>
   );
 }
+
+PostBody.propTypes = {
+  content: PropTypes.string,
+};
