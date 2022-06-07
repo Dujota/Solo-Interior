@@ -3,7 +3,8 @@ import PropTypes from 'prop-types';
 import cn from 'classnames';
 import Image from 'next/image';
 import Link from 'next/link';
-import { urlForImage } from '@/lib/sanity';
+import { urlForImage } from 'lib/sanity';
+import { EmptyCoverImage } from '@/components/common/imeages';
 
 export default function PreviewCoverImage({ title, slug, image: source, size }) {
   const image = source ? (
@@ -22,7 +23,7 @@ export default function PreviewCoverImage({ title, slug, image: source, size }) 
       />
     </div>
   ) : (
-    <div style={{ paddingTop: '50%', backgroundColor: '#ddd' }} />
+    <EmptyCoverImage />
   );
 
   return (

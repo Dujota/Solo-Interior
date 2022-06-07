@@ -6,7 +6,7 @@ import CoverImage from '../common/imeages/CoverImage';
 import ProjectTitle from './ProjectTitle';
 
 export default function ProjectHeader({ title, coverImage }) {
-  const size = useImageSize(DEFAULT_PROJECT_IMAGE_SIZE, DEFAULT_PROJECT_IMAGE_SIZE);
+  const size = useImageSize({ width: 2000, height: 800 }, DEFAULT_PROJECT_IMAGE_SIZE);
 
   return (
     <>

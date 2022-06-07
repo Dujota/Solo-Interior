@@ -23,11 +23,11 @@ export default function CoverImage({
       })}
     >
       <Image
-        layout="responsive"
+        layout="intrinsic"
         alt={`Cover Image for ${title}`}
         quality={100}
         // placeholder="blur"
-        src={urlForImage(source).height(size.height).width(size.width).url()}
+        src={urlForImage(source).height(size?.height).width(size?.width).url()}
         {...size}
       />
     </div>
