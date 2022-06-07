@@ -28,9 +28,9 @@ function Contact({ data = {}, preview }) {
   //   enabled: preview && slug,
   // });
 
-  if (!router.isFallback) {
-    return <ErrorPage statusCode={404} />;
-  }
+  // if (!router.isFallback) {
+  //   return <ErrorPage statusCode={404} />;
+  // }
 
   return (
     <Layout preview={false}>

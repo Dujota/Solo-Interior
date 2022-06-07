@@ -33,8 +33,6 @@ export async function getStaticProps({ params, preview = false }) {
 function About({ data = {}, preview }) {
   const router = useRouter();
 
-  const slug = data?.aboutPage?.slug;
-
   const {
     data: { aboutPage },
   } = usePreviewSubscription(indexQuery, {
@@ -42,9 +40,9 @@ function About({ data = {}, preview }) {
     enabled: preview,
   });
 
-  if (!router.isFallback && !slug) {
-    return <ErrorPage statusCode={404} />;
-  }
+  // if (!router.isFallback) {
+  //   return <ErrorPage statusCode={404} />;
+  // }
 
   return (
     <Layout preview={false}>
@@ -55,7 +53,7 @@ function About({ data = {}, preview }) {
           <section className="grid grid-cols-1 md:grid-cols-2 md:gap-x-8 lg:gap-x-10 gap-y-20 md:gap-y-10 mb-32 mt-32">
             <Header keywords={aboutPage?.header} />
 
-            <PostBody content={aboutPage.body} />
+            <PostBody content={aboutPage?.body} />
           </section>
         )}
       </Container>
