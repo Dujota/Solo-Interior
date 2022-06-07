@@ -12,7 +12,7 @@ import CoverImage from '../common/imeages/CoverImage';
 import useImageSize from '../hooks/utils/useImageSize';
 
 export default function HeroProject({ title, heroImage, publishedAt, excerpt, slug }) {
-  const size = useImageSize({ defaultValue: DEFAULT_HERO_PROJECT_IMAGE_SIZE });
+  const size = useImageSize({ defaultValue: DEFAULT_HERO_PROJECT_IMAGE_SIZE }, { height: 1500 });
 
   return (
     <section className="hover:drop-shadow-md">

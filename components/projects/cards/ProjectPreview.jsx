@@ -3,6 +3,8 @@ import PropTypes from 'prop-types';
 
 import { CardHeading, DateText, OtherText } from '@/components/common/typography';
 import Date from '@/components/common/Date';
+import useImageSize from '@/components/hooks/utils/useImageSize';
+import { DEFAULT_PROJECT_IMAGE_SIZE } from 'lib/constants';
 import PreviewCoverImage from './PreviewCoverImage';
 import {
   FullCardContentWrapper,
@@ -13,11 +15,13 @@ import {
 } from './projectCardStyles';
 
 export default function ProjectPreview({ title, coverImage, publishedAt, excerpt, slug, full }) {
+  const size = useImageSize(DEFAULT_PROJECT_IMAGE_SIZE, DEFAULT_PROJECT_IMAGE_SIZE);
+
   if (full) {
     return (
       <>
         <FullCardImageWrapper className="mb-5">
-          <PreviewCoverImage slug={slug} title={title} image={coverImage} />
+          <PreviewCoverImage slug={slug} title={title} image={coverImage} size={size} />
         </FullCardImageWrapper>
 
         <FullCardContentWrapper className="mb-5">
@@ -44,7 +48,7 @@ export default function ProjectPreview({ title, coverImage, publishedAt, excerpt
   return (
     <PreviewCardWrapper className="hover:drop-shadow-lg">
       <div className="mb-5">
-        <PreviewCoverImage slug={slug} title={title} image={coverImage} />
+        <PreviewCoverImage slug={slug} title={title} image={coverImage} size={size} />
       </div>
       <PreviewCardContentWrapper className="flex justify-between">
         <div className="text-lg mb-4 font-bold">

@@ -1,7 +1,13 @@
 import { useEffect, useState } from 'react';
 import useWindowDimensions from './useWindowDimensions';
 
-function useImageSize({ defaultValue = {} }) {
+function useImageSize(
+  defaultValue = {},
+  options = {
+    width: 2000,
+    height: 1000,
+  }
+) {
   const [currentWidth, setWidth] = useState(null);
 
   const [size, setSize] = useState(defaultValue);
@@ -11,7 +17,7 @@ function useImageSize({ defaultValue = {} }) {
   useEffect(() => {
     if (!currentWidth && width < 768) {
       setWidth(width);
-      setSize({ ...size, height: 1500 });
+      setSize({ ...size, ...options });
     } else if (currentWidth && width > 767) {
       setSize(defaultValue);
       setWidth(null);

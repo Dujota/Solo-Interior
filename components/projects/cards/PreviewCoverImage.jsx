@@ -5,7 +5,7 @@ import Image from 'next/image';
 import Link from 'next/link';
 import { urlForImage } from '@/lib/sanity';
 
-export default function PreviewCoverImage({ title, slug, image: source }) {
+export default function PreviewCoverImage({ title, slug, image: source, size }) {
   const image = source ? (
     <div
       className={cn('shadow-small', {
@@ -14,12 +14,11 @@ export default function PreviewCoverImage({ title, slug, image: source }) {
     >
       <Image
         layout="responsive"
-        width={2000}
-        height={1000}
         alt={`Cover Image for ${title}`}
         quality={100}
         // placeholder="blur"
-        src={urlForImage(source).height(1000).width(2000).url()}
+        {...size}
+        src={urlForImage(source).height(size?.height).width(size?.width).url()}
       />
     </div>
   ) : (
@@ -39,4 +38,9 @@ export default function PreviewCoverImage({ title, slug, image: source }) {
   );
 }
 
-PreviewCoverImage.propTypes = { title: PropTypes.string, slug: PropTypes.string, image: PropTypes.string };
+PreviewCoverImage.propTypes = {
+  title: PropTypes.string,
+  slug: PropTypes.string,
+  image: PropTypes.string,
+  size: PropTypes.object,
+};
