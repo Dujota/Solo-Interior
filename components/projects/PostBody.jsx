@@ -3,9 +3,16 @@ import PropTypes from 'prop-types';
 import { PortableText } from 'lib/sanity';
 import markdownStyles from './markdown-styles.module.css';
 
-export default function PostBody({ content }) {
+let cssCalss;
+export default function PostBody({ content, className }) {
+  if (className) {
+    cssCalss = `max-w-2xl mx-auto ${className} ${markdownStyles.markdown}`;
+  } else {
+    cssCalss = `max-w-2xl mx-auto ${markdownStyles.markdown}`;
+  }
+
   return (
-    <div className={`max-w-2xl mx-auto ${markdownStyles.markdown}`}>
+    <div className={cssCalss}>
       <PortableText value={content} />
     </div>
   );
@@ -13,4 +20,5 @@ export default function PostBody({ content }) {
 
 PostBody.propTypes = {
   content: PropTypes.array,
+  className: PropTypes.string,
 };

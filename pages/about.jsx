@@ -50,10 +50,10 @@ function About({ data = {}, preview }) {
         {router.isFallback ? (
           <Title>Loading...</Title>
         ) : (
-          <section className="grid grid-cols-1 md:grid-cols-2 md:gap-x-8 lg:gap-x-10 gap-y-20 md:gap-y-10 mb-32 mt-32">
+          <section className="grid sm:grid-cols-1 md:grid-cols-2 md:gap-x-8 lg:gap-x-10 gap-y-20 md:gap-y-10 mb-32 mt-32">
             <Header keywords={aboutPage?.header} />
 
-            <PostBody content={aboutPage?.body} />
+            <PostBody content={aboutPage?.body} className="xs:col-span-2" />
           </section>
         )}
       </Container>
