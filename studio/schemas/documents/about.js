@@ -6,7 +6,8 @@ export default {
     icon: BsPersonBadge,
     type: "document",
      __experimental_actions: [
-    /* "create", "delete", */ "update", "publish"
+    // /* "create", "delete", */ "update", "publish"
+     "create", "delete", "update", "publish"
     ],
     fields: [
         {

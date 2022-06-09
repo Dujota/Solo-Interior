@@ -40,10 +40,6 @@ function About({ data = {}, preview }) {
     enabled: preview,
   });
 
-  // if (!router.isFallback) {
-  //   return <ErrorPage statusCode={404} />;
-  // }
-
   return (
     <Layout preview={false}>
       <Container>
