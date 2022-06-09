@@ -1,9 +1,9 @@
-import { BsPersonBadge } from "react-icons/bs";
+import { MdContactMail } from "react-icons/md";
 
 export default {
     name: "contact",
     title: "Contact Page",
-    icon: BsPersonBadge,
+    icon: MdContactMail,
     type: "document",
      __experimental_actions: [
     // /* "create", "delete", */ "update", "publish"
