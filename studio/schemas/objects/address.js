@@ -14,7 +14,6 @@ export default {
             name: 'street',
             description:'Street address ex: 123 abc street',
             type: 'string',
-            validation: Rule => Rule.required()
         },
         {
             title: 'Unit Number',
@@ -26,14 +25,12 @@ export default {
             title: 'City',
             name: 'city',
             type: 'string',
-            validation: Rule => Rule.required()
         },
         {
             title: 'Province/State',
             name: 'province',
             description:'Province or State',
             type: 'string',
-            validation: Rule => Rule.required()
         },
         {
             title: 'Country',
