@@ -40,8 +40,6 @@ function Contact({ data = {}, preview }) {
     enabled: preview,
   });
 
-  console.log(contactPage);
-
   return (
     <Layout preview={false}>
       <Container>
