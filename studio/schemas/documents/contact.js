@@ -1,8 +1,8 @@
 import { BsPersonBadge } from "react-icons/bs";
 
 export default {
-    name: "about",
-    title: "About Page",
+    name: "contact",
+    title: "Contact Page",
     icon: BsPersonBadge,
     type: "document",
      __experimental_actions: [
@@ -17,9 +17,9 @@ export default {
             validation: Rule => Rule.required()
         },
         {
-            name: "header",
-            title: "Header",
-            type: "keywords",
+            title: 'Address',
+            name: 'address',
+            type: 'address',
             validation: Rule => Rule.required()
         },
         {
@@ -44,12 +44,12 @@ export default {
                     "SEO descriptions are usually better when its below 160"
                 )
         },
-        {
-            name: "body",
-            title: "Body",
-            type: "contentBlock",
-            validation: Rule => Rule.required()
-        },
+        // {
+        //     name: "body",
+        //     title: "Body",
+        //     type: "contentBlock",
+        //     validation: Rule => Rule.required()
+        // },
         {
             name: "heroImage",
             type: "mainImage",

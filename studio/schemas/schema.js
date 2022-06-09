@@ -21,6 +21,8 @@ import internalLink from './objects/internalLink';
 import link from './objects/link';
 import embedHTML from './objects/embedHTML';
 import figure from './objects/figure';
+import address from './objects/address';
+import contact from './documents/contact';
 
 // Then we give our schema to the builder and provide the result to Sanity
 export default createSchema({
@@ -45,5 +47,7 @@ export default createSchema({
     route,
     simplePortableText,
     portableText,
+    address,
+    contact
   ]),
 })
