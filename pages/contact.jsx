@@ -5,7 +5,7 @@ import ErrorPage from 'next/error';
 import Head from 'next/head';
 
 // Sanity
-import { indexQuery } from 'lib/queries/project';
+import { indexQuery } from 'lib/queries/contact';
 import { sanityClient, getClient, overlayDrafts } from 'lib/sanity.server';
 import { urlForImage, usePreviewSubscription } from 'lib/sanity';
 
@@ -16,21 +16,31 @@ import { Heading, Title } from 'components/common/typography';
 import Layout from 'components/common/layout';
 import Container from 'components/common/layout/Container';
 
+export async function getStaticProps({ params, preview = false }) {
+  const contactPage = await getClient(preview).fetch(indexQuery);
+
+  return {
+    props: {
+      data: {
+        contactPage,
+      },
+      preview,
+    },
+    revalidate: 10,
+  };
+}
+
 function Contact({ data = {}, preview }) {
   const router = useRouter();
 
-  // PULL DATA FROM SANITY CONFIG
-  // const {
-  //   data: { projects },
-  // } = usePreviewSubscription(indexQuery, {
-  //   params: { slug },
-  //   initialData: data,
-  //   enabled: preview && slug,
-  // });
+  const {
+    data: { contactPage },
+  } = usePreviewSubscription(indexQuery, {
+    initialData: data,
+    enabled: preview,
+  });
 
-  // if (!router.isFallback) {
-  //   return <ErrorPage statusCode={404} />;
-  // }
+  console.log(contactPage);
 
   return (
     <Layout preview={false}>
@@ -39,7 +49,10 @@ function Contact({ data = {}, preview }) {
           <Title>Loading...</Title>
         ) : (
           <section>
-            <Heading>Contact Us</Heading>
+            <Heading>{contactPage?.title}</Heading>
+            <p>
+              <strong>{contactPage?.excerpt}</strong>
+            </p>
           </section>
         )}
       </Container>
