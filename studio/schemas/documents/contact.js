@@ -17,12 +17,6 @@ export default {
             validation: Rule => Rule.required()
         },
         {
-            title: 'Address',
-            name: 'address',
-            type: 'address',
-            validation: Rule => Rule.required()
-        },
-        {
             name: "slug",
             title: "Slug",
             type: "slug",
@@ -31,6 +25,12 @@ export default {
                 source: "title",
                 maxLength: 96
             }
+        },
+        {
+            title: 'Address',
+            name: 'address',
+            type: 'address',
+            validation: Rule => Rule.required()
         },
         {
             name: "excerpt",
