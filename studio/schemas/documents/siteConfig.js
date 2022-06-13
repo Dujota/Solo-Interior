@@ -87,6 +87,18 @@ export default {
             ],
         },
         {
+            title: 'Social Media Links',
+            name: 'socialMediaLinks',
+            type: 'array',
+            type: 'array',
+            validation: Rule => [
+                Rule.max(10).warning('Are you sure you want more than 10 items?'),
+                Rule.unique().error('You have duplicate menu items'),
+            ],
+            fieldset: 'footer',
+            of: [ { type: 'cta'} ],
+        },
+        {
             name: 'footerText',
             type: 'simplePortableText',
             fieldset: 'footer',

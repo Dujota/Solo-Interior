@@ -42,6 +42,6 @@ export default function PreviewCoverImage({ title, slug, image: source, size }) 
 PreviewCoverImage.propTypes = {
   title: PropTypes.string,
   slug: PropTypes.string,
-  image: PropTypes.string,
+  image: PropTypes.object,
   size: PropTypes.object,
 };

@@ -44,6 +44,12 @@ export default {
                     "SEO descriptions are usually better when its below 160"
                 )
         },
+        {
+            title: 'Social Media Links',
+            name: 'socialMediaLinks',
+            type: 'array',
+            of: [{ type: 'cta' }]
+        },
         // {
         //     name: "body",
         //     title: "Body",
