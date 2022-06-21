@@ -17,6 +17,22 @@ export default {
             validation: Rule => Rule.required()
         },
         {
+            name: "phone",
+            title: "Phone Number",
+            description:
+                "Contact number",
+            type: "string",
+            validation: Rule => Rule.required()
+        },
+        {
+            name: "email",
+            title: "Email Address",
+            description:
+                "Email address",
+            type: "string",
+            validation: Rule => Rule.required()
+        },
+        {
             name: "slug",
             title: "Slug",
             type: "slug",
