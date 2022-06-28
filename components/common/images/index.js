@@ -9,6 +9,10 @@ export const SliderImageContainer = styled.div`
   height: 600px;
   margin: 10px;
 
+  @media only screen and (min-width: 1575px) {
+    height: 700px;
+  }
+
   @media only screen and (max-width: 1024px) {
     height: 400px;
   }
