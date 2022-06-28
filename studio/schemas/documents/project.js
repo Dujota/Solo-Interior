@@ -60,7 +60,7 @@ export default {
             type:"array",
             of:[{type:"mainImage"}]
 
-        }
+        },
         {
             name: "keywords",
             type: "keywords",
