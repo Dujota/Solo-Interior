@@ -12,8 +12,8 @@ export default function Layout({ preview, children }) {
         <PreviewAlert preview={preview} />
         <Navbar />
         <main>{children}</main>
+        <Footer />
       </div>
-      <Footer />
     </>
   );
 }
