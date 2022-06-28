@@ -8,20 +8,6 @@ import Slider from 'react-slick';
 import { projectPageSlider } from './settings';
 import SliderImage from '../images/SliderImage';
 
-const settings = {
-  className: 'slider variable-width',
-  dots: true,
-  //   infinite: true,
-  centerMode: true,
-  slidesToShow: 1,
-  slidesToScroll: 1,
-  variableWidth: true,
-  adaptiveHeight: true,
-  //   autoplay: true,
-  speed: 5000,
-  //   autoplaySpeed: 3000,
-};
-
 function ImageSlider({ images }) {
   return (
     <div className="image-slider slider mb-12">

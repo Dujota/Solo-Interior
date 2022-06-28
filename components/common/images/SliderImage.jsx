@@ -6,14 +6,7 @@ import { SliderImageContainer } from '.';
 export default function SliderImage({ alt, slug, image: source, styles }) {
   return (
     <SliderImageContainer className="relative image-container">
-      <Image
-        width="100%"
-        height="100%"
-        src={urlForImage(source).url()}
-        layout="fill"
-        alt={alt}
-        // objectFit="contain"
-      />
+      <Image width="100%" height="100%" src={urlForImage(source).url()} layout="fill" alt={alt} loading="lazy" />
     </SliderImageContainer>
   );
 }
