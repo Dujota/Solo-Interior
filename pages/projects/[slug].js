@@ -19,6 +19,7 @@ import Container from 'components/common/layout/Container';
 import ProjectHeader from 'components/projects/ProjectHeader';
 import SectionSeparator from 'components/common/layout/SectionSeparator';
 import PostBody from 'components/projects/PostBody';
+import ImageSlider from '@/components/common/sliders/ImageSlider';
 
 const Project = ({ data = {}, preview }) => {
   const router = useRouter();
@@ -63,8 +64,7 @@ const Project = ({ data = {}, preview }) => {
               />
               <PostBody content={project?.body} />
             </article>
-
-            <SectionSeparator />
+            {project?.images?.length && <ImageSlider images={project?.images} />}
           </>
         )}
       </Container>

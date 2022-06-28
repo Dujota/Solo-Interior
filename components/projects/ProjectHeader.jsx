@@ -2,7 +2,7 @@ import PropTypes from 'prop-types';
 
 import useImageSize from '@/components/hooks/utils/useImageSize';
 import { DEFAULT_PROJECT_IMAGE_SIZE } from 'lib/constants';
-import CoverImage from '../common/imeages/CoverImage';
+import CoverImage from '../common/images/CoverImage';
 import ProjectTitle from './ProjectTitle';
 
 export default function ProjectHeader({ title, coverImage }) {

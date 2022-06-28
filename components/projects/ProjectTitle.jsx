@@ -9,5 +9,5 @@ export default function ProjectTitle({ children }) {
 }
 
 ProjectTitle.propTypes = {
-  children: PropTypes.element,
+  children: PropTypes.oneOfType([PropTypes.string, PropTypes.element]),
 };

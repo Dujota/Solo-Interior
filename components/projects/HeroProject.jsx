@@ -6,7 +6,7 @@ import Link from 'next/link';
 // Components
 import { DEFAULT_HERO_PROJECT_IMAGE_SIZE } from 'lib/constants';
 import Date from '../common/Date';
-import CoverImage from '../common/imeages/CoverImage';
+import CoverImage from '../common/images/CoverImage';
 
 // Hooks
 import useImageSize from '../hooks/utils/useImageSize';

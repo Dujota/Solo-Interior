@@ -4,7 +4,7 @@ import cn from 'classnames';
 import Image from 'next/image';
 import Link from 'next/link';
 import { urlForImage } from 'lib/sanity';
-import { EmptyCoverImage } from '@/components/common/imeages';
+import { EmptyCoverImage } from '@/components/common/images';
 
 export default function PreviewCoverImage({ title, slug, image: source, size }) {
   const image = source ? (
