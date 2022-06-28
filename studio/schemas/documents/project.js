@@ -54,11 +54,11 @@ export default {
             description: 'The highest resolution'
         },
         {
-            name:"images",
-            title:"Gallery Images",
-            description:"Add a set of images for displaying in the slider gallery",
-            type:"array",
-            of:[{type:"mainImage"}]
+            name: "images",
+            title: "Gallery Images",
+            description: "Add a set of images for displaying in the slider gallery",
+            type: "array",
+            of: [{ type: "mainImage" }]
 
         },
         {
