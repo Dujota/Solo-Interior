@@ -1,29 +1,23 @@
 import Link from 'next/link';
+import PropTypes from 'prop-types';
+import PostBody from '@/components/projects/PostBody';
 
-export default function AboutHome() {
+// can customize how many paragraphs to display on home page by adding an extra field
+export default function AboutHome({ aboutDoc }) {
   return (
     <section>
-      <p>
-        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore
-        magna aliqua. Et molestie ac feugiat sed lectus vestibulum mattis. At risus viverra adipiscing at in. Volutpat
-        diam ut venenatis tellus. Et pharetra pharetra massa massa ultricies mi. Imperdiet nulla malesuada pellentesque
-        elit. Massa placerat duis ultricies lacus sed turpis tincidunt. A erat nam at lectus urna duis. Volutpat lacus
-        laoreet non curabitur. Maecenas ultricies mi eget mauris pharetra et ultrices neque. Mauris rhoncus aenean vel
-        elit scelerisque mauris pellentesque pulvinar pellentesque. Aliquam ut porttitor leo a diam sollicitudin tempor.
-        <br />
-        <br />
-        Maecenas volutpat blandit aliquam etiam erat. Cursus mattis molestie a iaculis at erat pellentesque.
-        Pellentesque eu tincidunt tortor aliquam. Purus in mollis nunc sed id semper. Massa placerat duis ultricies
-        lacus sed turpis tincidunt. Mauris pharetra et ultrices neque ornare aenean. Massa id neque aliquam vestibulum
-        morbi. Arcu cursus euismod quis viverra nibh cras pulvinar mattis. Euismod nisi porta lorem mollis. Donec
-        pretium vulputate sapien nec sagittis aliquam malesuada. Eu facilisis sed odio morbi quis. Dolor sed viverra
-        ipsum nunc aliquet. Augue eget arcu dictum varius. Tincidunt nunc pulvinar sapien et ligula ullamcorper
-        malesuada proin libero. Magna etiam tempor orci eu lobortis elementum nibh tellus molestie.
-      </p>
-
-      <Link href="/about">
-        <a className="hover:underline">About Us</a>
-      </Link>
+      <PostBody
+        content={aboutDoc?.body.slice(0, 3)}
+        className="col-span-2 xs:max-w-full sm:max-w-[80%] md:col-start-1 md:col-span-1 md:max-w-[80%]"
+      >
+        <Link href="/about">
+          <a className="underline">Learn more about me.</a>
+        </Link>
+      </PostBody>
     </section>
   );
 }
+
+AboutHome.propTypes = {
+  aboutDoc: PropTypes.object,
+};

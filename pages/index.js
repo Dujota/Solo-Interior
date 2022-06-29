@@ -1,7 +1,8 @@
 import PropTypes from 'prop-types';
 import Head from 'next/head';
 
-import { indexQuery } from 'lib/queries/project';
+import { indexQuery as allProjects } from 'lib/queries/project';
+import { indexQuery as aboutDoc } from 'lib/queries/about';
 import { usePreviewSubscription } from 'lib/sanity';
 import { getClient, overlayDrafts } from 'lib/sanity.server';
 
@@ -13,11 +14,12 @@ import AboutHome from '@/components/home/AboutHome';
 import SectionSeparator from '@/components/common/layout/SectionSeparator';
 
 export async function getStaticProps({ params, preview = false }) {
-  const allProjects = overlayDrafts(await getClient(preview).fetch(indexQuery));
+  const projects = overlayDrafts(await getClient(preview).fetch(allProjects));
+  const about = await getClient(preview).fetch(aboutDoc);
 
   return {
     props: {
-      data: { projects: allProjects },
+      data: { projects, about },
       preview,
     },
     revalidate: 10,
@@ -26,8 +28,8 @@ export async function getStaticProps({ params, preview = false }) {
 
 export default function Home({ data = {}, preview }) {
   const {
-    data: { projects },
-  } = usePreviewSubscription(indexQuery, {
+    data: { projects, about },
+  } = usePreviewSubscription([allProjects, aboutDoc], {
     initialData: data,
     enabled: preview,
   });
@@ -42,7 +44,7 @@ export default function Home({ data = {}, preview }) {
       <Container>
         <HeroProject {...heroProject} />
         <SectionSeparator top={10} bottom={10} />
-        <AboutHome />
+        <AboutHome aboutDoc={about} />
         <SectionSeparator top={24} bottom={10} />
         <ProjectList projects={moreProjects} />
       </Container>
