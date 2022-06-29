@@ -67,6 +67,7 @@ export default {
             title: "Keywords",
             description: 'Add keywords that describe the project'
         },
+
         // {
         //     name: 'keywords',
         //     type: 'array',
@@ -92,7 +93,20 @@ export default {
             options:{
                 dateFormat: 'YYYY-MM-DD',
             }
+        },
+        {
+            name: "order",
+            title: "Order",
+            type: "number",
+            hidden: true,
         }
+    ],
+    orderings: [
+        {
+            title: "Manual order",
+            name: "manualOrder",
+            by: [{ field: "order", direction: "asc" }],
+        },
     ],
 
     preview: {

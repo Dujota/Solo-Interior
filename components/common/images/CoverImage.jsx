@@ -52,6 +52,6 @@ export default function CoverImage({
 CoverImage.propTypes = {
   title: PropTypes.string,
   slug: PropTypes.string,
-  image: PropTypes.string,
+  image: PropTypes.object,
   size: PropTypes.object,
 };

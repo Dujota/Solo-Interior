@@ -10,8 +10,10 @@ export const projectPageSlider = {
     adaptiveHeight: true,
     cssEase: 'linear',
     pauseOnHover: true,
+    pauseOnDotsHover: true,
+    pauseOnFocus: true,
     swipeToSlide: true,
-    // centerPadding: '10px',
+    swipe: true,
     focusOnSelect: true,
     responsive: [
       {

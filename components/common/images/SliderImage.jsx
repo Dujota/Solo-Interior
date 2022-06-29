@@ -14,6 +14,6 @@ export default function SliderImage({ alt, slug, image: source, styles }) {
 SliderImage.propTypes = {
   alt: PropTypes.string,
   slug: PropTypes.string,
-  image: PropTypes.string,
+  image: PropTypes.object,
   styles: PropTypes.object,
 };
