@@ -43,6 +43,7 @@ export default function Home({ data = {}, preview }) {
       <Head>
         <title>Solo Interior, European Interior Design</title>
       </Head>
+
       <Container>
         <HeroProject {...heroProject} />
         <SectionSeparator top={10} bottom={10} />

@@ -22,7 +22,8 @@ const FooterContainer = styled.footer`
 
 // TODO:
 // have links for social media etc, should come from Sanity CMS
-export default function Footer({ config: { footerText } }) {
+export default function Footer({ config }) {
+  const { footerText } = config || {};
   return (
     <FooterContainer className="bg-accent-1 border-t border-accent-2 p-7">
       <Container>
