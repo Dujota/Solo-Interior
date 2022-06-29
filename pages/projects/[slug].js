@@ -9,6 +9,7 @@ import Head from 'next/head';
 import { projectQuery, projectSlugsQuery } from 'lib/queries/project';
 import { sanityClient, getClient, overlayDrafts } from 'lib/sanity.server';
 import { urlForImage, usePreviewSubscription } from 'lib/sanity';
+import { siteConfigQuery } from 'lib/queries/config';
 
 // Styled Comps
 import { Title } from 'components/common/typography';
@@ -27,8 +28,8 @@ const Project = ({ data = {}, preview }) => {
   const slug = data?.project?.slug;
 
   const {
-    data: { project, moreProjects },
-  } = usePreviewSubscription(projectQuery, {
+    data: { project, moreProjects, config },
+  } = usePreviewSubscription([projectQuery, siteConfigQuery], {
     params: { slug },
     initialData: data,
     enabled: preview && slug,
@@ -39,7 +40,7 @@ const Project = ({ data = {}, preview }) => {
   }
 
   return (
-    <Layout preview={preview}>
+    <Layout preview={preview} config={config}>
       <Container>
         {router.isFallback ? (
           <Title>Loading...</Title>
@@ -96,6 +97,7 @@ export async function getStaticProps({ params, preview = false }) {
   const { project, moreProjects } = await getClient(preview).fetch(projectQuery, {
     slug: params.slug,
   });
+  const config = await getClient(preview).fetch(siteConfigQuery);
 
   return {
     props: {

@@ -99,8 +99,10 @@ export default {
             of: [ { type: 'cta'} ],
         },
         {
+            title: 'Footer Text field',
+            description:"This text will display before the links in the footer",
             name: 'footerText',
-            type: 'simplePortableText',
+            type: 'string',
             fieldset: 'footer',
         },
     ],

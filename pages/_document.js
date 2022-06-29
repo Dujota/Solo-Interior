@@ -1,3 +1,4 @@
+import { getClient } from 'lib/sanity.server';
 import Document, { Html, Head, Main, NextScript } from 'next/document';
 import { ServerStyleSheet } from 'styled-components';
 
@@ -13,8 +14,11 @@ export default class MyDocument extends Document {
         });
 
       const initialProps = await Document.getInitialProps(ctx);
+      const lang = await getClient(ctx?.preview).fetch('*[_type == "siteconfig"]');
+
       return {
         ...initialProps,
+        lang,
         styles: (
           <>
             {initialProps.styles}
@@ -29,7 +33,7 @@ export default class MyDocument extends Document {
 
   render() {
     return (
-      <Html>
+      <Html lang={this.props.lang[0] || 'en-ca'}>
         <Head />
         <body>
           <Main />

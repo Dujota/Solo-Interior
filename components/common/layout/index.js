@@ -4,7 +4,7 @@ import Footer from './Footer';
 import Meta from './Meta';
 import Navbar from './Navbar/Navbar';
 
-export default function Layout({ preview, children }) {
+export default function Layout({ preview, children, config }) {
   return (
     <>
       <Meta />
@@ -12,7 +12,7 @@ export default function Layout({ preview, children }) {
         <PreviewAlert preview={preview} />
         <Navbar />
         <main>{children}</main>
-        <Footer />
+        <Footer config={config} />
       </div>
     </>
   );
@@ -21,4 +21,5 @@ export default function Layout({ preview, children }) {
 Layout.propTypes = {
   children: PropTypes.element,
   preview: PropTypes.bool,
+  config: PropTypes.object,
 };

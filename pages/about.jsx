@@ -4,6 +4,7 @@ import { useRouter } from 'next/router';
 import ErrorPage from 'next/error';
 // Sanity
 import { indexQuery } from 'lib/queries/about';
+import { siteConfigQuery } from 'lib/queries/config';
 import { getClient } from 'lib/sanity.server';
 import { usePreviewSubscription } from 'lib/sanity';
 
@@ -18,11 +19,13 @@ import Header from '@/components/about/Header';
 
 export async function getStaticProps({ params, preview = false }) {
   const aboutPage = await getClient(preview).fetch(indexQuery);
+  const config = await getClient(preview).fetch(siteConfigQuery);
 
   return {
     props: {
       data: {
         aboutPage,
+        config,
       },
       preview,
     },
@@ -34,14 +37,14 @@ function About({ data = {}, preview }) {
   const router = useRouter();
 
   const {
-    data: { aboutPage },
-  } = usePreviewSubscription(indexQuery, {
+    data: { aboutPage, config },
+  } = usePreviewSubscription([indexQuery, siteConfigQuery], {
     initialData: data,
     enabled: preview,
   });
 
   return (
-    <Layout preview={false}>
+    <Layout preview={false} config={config}>
       <Container>
         {router.isFallback ? (
           <Title>Loading...</Title>

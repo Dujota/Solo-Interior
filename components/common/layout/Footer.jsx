@@ -1,4 +1,5 @@
 import styled from 'styled-components';
+import PropTypes from 'prop-types';
 import Container from './Container';
 
 const FooterContainer = styled.footer`
@@ -21,13 +22,13 @@ const FooterContainer = styled.footer`
 
 // TODO:
 // have links for social media etc, should come from Sanity CMS
-export default function Footer() {
+export default function Footer({ config: { footerText } }) {
   return (
     <FooterContainer className="bg-accent-1 border-t border-accent-2 p-7">
       <Container>
         <div className="h-48 flex flex-col lg:flex-row items-center">
           <h3 className="text-4xl lg:text-5xl font-bold tracking-tighter leading-tight text-center lg:text-left mb-10 lg:mb-0 lg:pr-4 lg:w-1/2">
-            Solo Interior, the european design touch.
+            {footerText}
           </h3>
           <div className="flex flex-col lg:flex-row justify-center items-center lg:pl-4 lg:w-1/2">
             <a
@@ -45,3 +46,7 @@ export default function Footer() {
     </FooterContainer>
   );
 }
+
+Footer.propTypes = {
+  config: PropTypes.object,
+};

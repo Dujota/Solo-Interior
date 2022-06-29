@@ -3,6 +3,7 @@ import Head from 'next/head';
 
 import { indexQuery as allProjects } from 'lib/queries/project';
 import { indexQuery as aboutDoc } from 'lib/queries/about';
+import { siteConfigQuery } from 'lib/queries/config';
 import { usePreviewSubscription } from 'lib/sanity';
 import { getClient, overlayDrafts } from 'lib/sanity.server';
 
@@ -16,10 +17,11 @@ import SectionSeparator from '@/components/common/layout/SectionSeparator';
 export async function getStaticProps({ params, preview = false }) {
   const projects = overlayDrafts(await getClient(preview).fetch(allProjects));
   const about = await getClient(preview).fetch(aboutDoc);
+  const config = await getClient(preview).fetch(siteConfigQuery);
 
   return {
     props: {
-      data: { projects, about },
+      data: { projects, about, config },
       preview,
     },
     revalidate: 10,
@@ -28,8 +30,8 @@ export async function getStaticProps({ params, preview = false }) {
 
 export default function Home({ data = {}, preview }) {
   const {
-    data: { projects, about },
-  } = usePreviewSubscription([allProjects, aboutDoc], {
+    data: { projects, about, config },
+  } = usePreviewSubscription([allProjects, aboutDoc, siteConfigQuery], {
     initialData: data,
     enabled: preview,
   });
@@ -37,7 +39,7 @@ export default function Home({ data = {}, preview }) {
   const [heroProject, ...moreProjects] = projects;
 
   return (
-    <Layout preview={preview}>
+    <Layout preview={preview} config={config}>
       <Head>
         <title>Solo Interior, European Interior Design</title>
       </Head>
