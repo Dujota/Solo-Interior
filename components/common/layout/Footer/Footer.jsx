@@ -1,6 +1,7 @@
 import styled from 'styled-components';
 import PropTypes from 'prop-types';
-import Container from './Container';
+import Container from '../Container';
+import FooterLinks from './FooterLinks';
 
 const FooterContainer = styled.footer`
   @media only screen and (max-width: 768px) {
@@ -31,17 +32,7 @@ export default function Footer({ config }) {
           <h3 className="text-4xl lg:text-5xl font-bold tracking-tighter leading-tight text-center lg:text-left mb-10 lg:mb-0 lg:pr-4 lg:w-1/2">
             {footerText}
           </h3>
-          <div className="flex flex-col lg:flex-row justify-center items-center lg:pl-4 lg:w-1/2">
-            <a
-              href="#TODO"
-              className="mx-3 bg-black hover:bg-white hover:text-black border border-black text-white font-bold py-3 px-12 lg:px-8 duration-200 transition-colors mb-6 lg:mb-0"
-            >
-              Link 1
-            </a>
-            <a href="#TODO" className="mx-3 font-bold hover:underline">
-              Link 2
-            </a>
-          </div>
+          <FooterLinks links={config?.socialMediaLinks} />
         </div>
       </Container>
     </FooterContainer>

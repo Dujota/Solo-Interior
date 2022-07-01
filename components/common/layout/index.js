@@ -1,6 +1,6 @@
 import PropTypes from 'prop-types';
 import PreviewAlert from '../notification/PreviewAlert';
-import Footer from './Footer';
+import Footer from './Footer/Footer';
 import Meta from './Meta';
 import Navbar from './Navbar/Navbar';
 
