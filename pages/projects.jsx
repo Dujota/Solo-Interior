@@ -12,12 +12,12 @@ import { sanityClient, getClient, overlayDrafts } from 'lib/sanity.server';
 import { urlForImage, usePreviewSubscription } from 'lib/sanity';
 
 // Styled Comps
-import { Title } from '@/components/common/typography';
+import { Title } from 'components/common/typography';
 
 // Components
-import Layout from '@/components/common/layout';
-import Container from '@/components/common/layout/Container';
-import ProjectList from '@/components/projects/ProjectList';
+import Layout from 'components/common/layout';
+import Container from 'components/common/layout/Container';
+import ProjectList from 'components/projects/ProjectList';
 import { siteConfigQuery } from 'lib/queries/config';
 
 export async function getStaticProps({ params, preview = false }) {

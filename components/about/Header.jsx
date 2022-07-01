@@ -1,6 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { Title } from '@/components/common/typography';
+import { Title } from 'components/common/typography';
 
 function Header({ keywords }) {
   if (!keywords || !keywords?.length) return null;

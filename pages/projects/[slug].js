@@ -18,9 +18,8 @@ import { Title } from 'components/common/typography';
 import Layout from 'components/common/layout';
 import Container from 'components/common/layout/Container';
 import ProjectHeader from 'components/projects/ProjectHeader';
-import SectionSeparator from 'components/common/layout/SectionSeparator';
 import PostBody from 'components/projects/PostBody';
-import ImageSlider from '@/components/common/sliders/ImageSlider';
+import ImageSlider from 'components/common/sliders/ImageSlider';
 
 const Project = ({ data = {}, preview }) => {
   const router = useRouter();

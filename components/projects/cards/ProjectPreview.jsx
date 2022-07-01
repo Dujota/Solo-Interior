@@ -1,9 +1,9 @@
 import Link from 'next/link';
 import PropTypes from 'prop-types';
 
-import { CardHeading, DateText, OtherText } from '@/components/common/typography';
-import Date from '@/components/common/Date';
-import useImageSize from '@/components/hooks/utils/useImageSize';
+import { CardHeading, DateText, OtherText } from 'components/common/typography';
+import Date from 'components/common/Date';
+import useImageSize from 'components/hooks/utils/useImageSize';
 import { DEFAULT_PROJECT_IMAGE_SIZE } from 'lib/constants';
 import PreviewCoverImage from './PreviewCoverImage';
 import {

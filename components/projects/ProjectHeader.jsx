@@ -1,6 +1,6 @@
 import PropTypes from 'prop-types';
 
-import useImageSize from '@/components/hooks/utils/useImageSize';
+import useImageSize from 'components/hooks/utils/useImageSize';
 import { DEFAULT_PROJECT_IMAGE_SIZE } from 'lib/constants';
 import CoverImage from '../common/images/CoverImage';
 import ProjectTitle from './ProjectTitle';

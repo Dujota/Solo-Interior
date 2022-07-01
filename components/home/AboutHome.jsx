@@ -1,6 +1,6 @@
 import Link from 'next/link';
 import PropTypes from 'prop-types';
-import PostBody from '@/components/projects/PostBody';
+import PostBody from 'components/projects/PostBody';
 
 // can customize how many paragraphs to display on home page by adding an extra field
 export default function AboutHome({ aboutDoc }) {

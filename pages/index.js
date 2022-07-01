@@ -7,12 +7,12 @@ import { siteConfigQuery } from 'lib/queries/config';
 import { usePreviewSubscription } from 'lib/sanity';
 import { getClient, overlayDrafts } from 'lib/sanity.server';
 
-import Layout from '@/components/common/layout';
-import Container from '@/components/common/layout/Container';
-import HeroProject from '@/components/projects/HeroProject';
-import ProjectList from '@/components/projects/ProjectList';
-import AboutHome from '@/components/home/AboutHome';
-import SectionSeparator from '@/components/common/layout/SectionSeparator';
+import Layout from 'components/common/layout';
+import Container from 'components/common/layout/Container';
+import HeroProject from 'components/projects/HeroProject';
+import ProjectList from 'components/projects/ProjectList';
+import AboutHome from 'components/home/AboutHome';
+import SectionSeparator from 'components/common/layout/SectionSeparator';
 
 export async function getStaticProps({ params, preview = false }) {
   const projects = overlayDrafts(await getClient(preview).fetch(allProjects));

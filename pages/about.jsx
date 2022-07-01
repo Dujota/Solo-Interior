@@ -9,13 +9,13 @@ import { getClient } from 'lib/sanity.server';
 import { usePreviewSubscription } from 'lib/sanity';
 
 // Styled Comps
-import { Title } from '@/components/common/typography';
+import { Title } from 'components/common/typography';
 
 // Components
-import Layout from '@/components/common/layout';
-import Container from '@/components/common/layout/Container';
-import PostBody from '@/components/projects/PostBody';
-import Header from '@/components/about/Header';
+import Layout from 'components/common/layout';
+import Container from 'components/common/layout/Container';
+import PostBody from 'components/projects/PostBody';
+import Header from 'components/about/Header';
 
 export async function getStaticProps({ params, preview = false }) {
   const aboutPage = await getClient(preview).fetch(indexQuery);
