@@ -20,8 +20,8 @@ function deriveIcon(type) {
 function FooterLinks({ links = [] }) {
   return (
     <div className="flex lg:flex-row justify-center items-center lg:pl-4 lg:w-1/2">
-      {links.map((cta) => (
-        <Link href={cta.link}>
+      {links.map((cta, idx) => (
+        <Link href={cta.link} key={idx}>
           <a className="text-3xl mx-3">{deriveIcon(cta.title.toLowerCase())}</a>
         </Link>
       ))}
