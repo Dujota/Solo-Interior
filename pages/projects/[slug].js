@@ -97,6 +97,7 @@ export async function getStaticProps({ params, preview = false }) {
   const { project, moreProjects } = await getClient(preview).fetch(projectQuery, {
     slug: params.slug,
   });
+
   const config = await getClient(preview).fetch(siteConfigQuery);
 
   return {
@@ -105,8 +106,13 @@ export async function getStaticProps({ params, preview = false }) {
       data: {
         project,
         moreProjects: overlayDrafts(moreProjects),
+        config,
       },
     },
+    // Next.js will attempt to re-generate the page:
+    // - When a request comes in
+    // - At most once every XX seconds
+    revalidate: 10,
   };
 }
 
