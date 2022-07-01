@@ -17,6 +17,7 @@ import { Heading, Title } from 'components/common/typography';
 import Layout from 'components/common/layout';
 import Container from 'components/common/layout/Container';
 import ContactDetails from 'components/contact/ContactDetails';
+import FooterLinks from 'components/common/layout/Footer/FooterLinks';
 
 export async function getStaticProps({ params, preview = false }) {
   const contactPage = await getClient(preview).fetch(indexQuery);
@@ -50,11 +51,14 @@ function Contact({ data = {}, preview }) {
         {router.isFallback ? (
           <Title>Loading...</Title>
         ) : (
-          <section className="mt-60 gap-y-20 mb-32 mt-32 grid md:grid-cols-2 md:gap-x-8 md:max-w-[80%] md:gap-y-10 lg:gap-x-10 m-auto sm:grid-col-1 ">
+          <section className="mt-40 md:mt-60 gap-y-20 mb-32 mt-32 grid md:grid-cols-2 md:gap-x-8 md:max-w-[80%] md:gap-y-10 lg:gap-x-10 m-auto sm:grid-col-1 ">
             <h1 className="col-span-2 xs:max-w-full sm:max-w-[80%] md:col-start-1 md:col-span-1 md:max-w-[80%] text-6xl font-bold md:col-span-1 col-span-2">
               {contactPage?.title}
             </h1>
             <ContactDetails address={contactPage.address} email={contactPage.email} phone={contactPage.phone} />
+            <div className="md:col-span-1 col-span-2 md:col-start-2">
+              <FooterLinks links={config?.socialMediaLinks} />
+            </div>
           </section>
         )}
       </Container>
