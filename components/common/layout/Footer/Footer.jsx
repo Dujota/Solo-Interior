@@ -39,16 +39,16 @@ export default function Footer({ config }) {
           </h3>
           <FooterLinks links={config?.socialMediaLinks} />
         </div>
+        <div className="footer-cp-text mt-10 sm:text-base text-sm">
+          © 2022{' '}
+          <Link href="https://www.denisdujota.dev/">
+            <a className="sanity-link" target="_blank">
+              Denis S. Dujota
+            </a>
+          </Link>{' '}
+          all right reserved.
+        </div>
       </Container>
-      <div className="footer-cp-text">
-        © 2022{' '}
-        <Link href="https://www.denisdujota.dev/">
-          <a className="sanity-link" target="_blank">
-            Denis S. Dujota
-          </a>
-        </Link>{' '}
-        all right reserved.
-      </div>
     </FooterContainer>
   );
 }
