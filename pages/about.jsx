@@ -1,7 +1,7 @@
 import PropTypes from 'prop-types';
 // Next
 import { useRouter } from 'next/router';
-import ErrorPage from 'next/error';
+
 // Sanity
 import { indexQuery } from 'lib/queries/about';
 import { siteConfigQuery } from 'lib/queries/config';
@@ -16,6 +16,11 @@ import Layout from 'components/common/layout';
 import Container from 'components/common/layout/Container';
 import PostBody from 'components/projects/PostBody';
 import Header from 'components/about/Header';
+import CoverImage from 'components/common/images/CoverImage';
+
+// Hooks
+import useImageSize from 'components/hooks/utils/useImageSize';
+import { DEFAULT_PROJECT_IMAGE_SIZE } from 'lib/constants';
 
 export async function getStaticProps({ params, preview = false }) {
   const aboutPage = await getClient(preview).fetch(indexQuery);
@@ -43,6 +48,14 @@ function About({ data = {}, preview }) {
     enabled: preview,
   });
 
+  const size = useImageSize(
+    {
+      width: 1000,
+      height: 1500,
+    },
+    {}
+  );
+
   return (
     <Layout preview={false} config={config}>
       <Container>
@@ -56,6 +69,9 @@ function About({ data = {}, preview }) {
               content={aboutPage?.body}
               className="col-span-2 xs:max-w-full sm:max-w-[80%] md:col-start-1 md:col-span-1 md:max-w-[80%]"
             />
+            <div className="md:col-span-1 col-span-2 about-image">
+              <CoverImage title={aboutPage?.heroImage?.caption} image={aboutPage?.heroImage} size={size} />
+            </div>
           </section>
         )}
       </Container>

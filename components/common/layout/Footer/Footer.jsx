@@ -5,7 +5,7 @@ import FooterLinks from './FooterLinks';
 
 const FooterContainer = styled.footer`
   @media only screen and (max-width: 768px) {
-    height: 350px;
+    height: 450px;
   }
 
   @media only screen and (min-width: 768px) and (min-height: 1023px) {
