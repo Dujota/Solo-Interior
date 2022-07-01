@@ -17,7 +17,8 @@ export default function PreviewCoverImage({ title, slug, image: source, size }) 
         layout="responsive"
         alt={`Cover Image for ${title}`}
         quality={100}
-        // placeholder="blur"
+        placeholder="blur"
+        blurDataURL="/public/blur.png"
         {...size}
         src={urlForImage(source).height(size?.height).width(size?.width).url()}
       />

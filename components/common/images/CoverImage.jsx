@@ -26,7 +26,8 @@ export default function CoverImage({
         layout="intrinsic"
         alt={`Cover Image for ${title}`}
         quality={100}
-        // placeholder="blur"
+        placeholder="blur"
+        blurDataURL="/public/blur.png"
         src={urlForImage(source).height(size?.height).width(size?.width).url()}
         {...size}
       />
