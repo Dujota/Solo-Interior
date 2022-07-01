@@ -5,6 +5,9 @@ import FooterLinks from './FooterLinks';
 
 const FooterContainer = styled.footer`
   @media only screen and (max-width: 768px) {
+    display: flex;
+    justify-content: center;
+    align-items: center;
     height: 450px;
   }
 
