@@ -1,5 +1,7 @@
 import styled from 'styled-components';
 import PropTypes from 'prop-types';
+import Link from 'next/link';
+
 import Container from '../Container';
 import FooterLinks from './FooterLinks';
 
@@ -38,6 +40,15 @@ export default function Footer({ config }) {
           <FooterLinks links={config?.socialMediaLinks} />
         </div>
       </Container>
+      <div className="footer-cp-text">
+        © 2022{' '}
+        <Link href="https://www.denisdujota.dev/">
+          <a className="sanity-link" target="_blank">
+            Denis S. Dujota
+          </a>
+        </Link>{' '}
+        all right reserved.
+      </div>
     </FooterContainer>
   );
 }
