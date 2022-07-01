@@ -19,7 +19,7 @@ export default function Layout({ preview, children, config }) {
 }
 
 Layout.propTypes = {
-  children: PropTypes.element,
+  children: PropTypes.oneOfType([PropTypes.element, PropTypes.array]),
   preview: PropTypes.bool,
   config: PropTypes.object,
 };
