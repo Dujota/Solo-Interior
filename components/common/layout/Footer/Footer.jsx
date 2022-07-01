@@ -8,7 +8,7 @@ const FooterContainer = styled.footer`
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 450px;
+    height: 350px;
   }
 
   @media only screen and (min-width: 768px) and (min-height: 1023px) {
