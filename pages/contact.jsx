@@ -51,7 +51,7 @@ function Contact({ data = {}, preview }) {
           <Title>Loading...</Title>
         ) : (
           <section className="mt-60 gap-y-20 mb-32 mt-32 grid md:grid-cols-2 md:gap-x-8 md:max-w-[80%] md:gap-y-10 lg:gap-x-10 m-auto sm:grid-col-1 ">
-            <h1 className="col-span-2 xs:max-w-full sm:max-w-[80%] md:col-start-1 md:col-span-1 md:max-w-[80%] text-6xl font-bold">
+            <h1 className="col-span-2 xs:max-w-full sm:max-w-[80%] md:col-start-1 md:col-span-1 md:max-w-[80%] text-6xl font-bold md:col-span-1 col-span-2">
               {contactPage?.title}
             </h1>
             <ContactDetails address={contactPage.address} email={contactPage.email} phone={contactPage.phone} />

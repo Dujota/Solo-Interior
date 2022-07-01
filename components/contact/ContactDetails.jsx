@@ -5,7 +5,7 @@ import { ContactDetailsContainer } from './contactStyles';
 
 function ContactDetails({ address, email, phone }) {
   return (
-    <ContactDetailsContainer className="contact-details-container text-lg font-semibold">
+    <ContactDetailsContainer className="contact-details-container text-lg font-semibold md:col-span-1 col-span-2">
       <p className="phone-field">
         <span className="font-bold mr-2">Phone:</span>
         {phone}
