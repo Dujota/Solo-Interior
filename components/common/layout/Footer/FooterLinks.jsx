@@ -1,6 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { ImBehance2, ImFacebook2, ImInstagram } from 'react-icons/im';
+import { ImBehance2, ImFacebook2, ImInstagram, ImLinkedin } from 'react-icons/im';
 import Link from 'next/link';
 
 function deriveIcon(type) {
@@ -11,7 +11,8 @@ function deriveIcon(type) {
       return <ImFacebook2 />;
     case 'instagram':
       return <ImInstagram />;
-
+    case 'linkedin':
+      return <ImLinkedin />;
     default:
       return type;
   }
