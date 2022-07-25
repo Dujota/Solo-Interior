@@ -41,6 +41,10 @@ export const NavLogo = styled.a`
     `}
 `;
 
+export const NavLogoWrapper = styled.div`
+  width: 70px;
+`;
+
 export const NavMenuList = styled.ul`
   display: flex;
   justify-content: space-between;

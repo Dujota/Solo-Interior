@@ -10,7 +10,7 @@ export default function Layout({ preview, children, config }) {
       <Meta />
       <div className="min-h-screen">
         <PreviewAlert preview={preview} />
-        <Navbar />
+        <Navbar logo={config?.logo} />
         <main>{children}</main>
         <Footer config={config} />
       </div>

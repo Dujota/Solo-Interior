@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import PropTypes from 'prop-types';
 
 // Components
 import Logo from './Logo';
@@ -9,9 +10,9 @@ import NavMenu from './NavMenu';
 import { Header, NavBar } from './NavbarStyles';
 
 // TODO - ADD TO SANITY SITECONFIG
-const LOGO_LABEL = 'SI.';
+const LOGO_LABEL = 'Solo Interior Design';
 
-function Navbar(props) {
+function Navbar({ logo }) {
   const [active, setActive] = useState(false);
 
   const toggleMobileMenu = () => {
@@ -21,7 +22,7 @@ function Navbar(props) {
   return (
     <Header name="header px-20">
       <NavBar name="Menu" role="navigation" active={active}>
-        <Logo href="/" label={LOGO_LABEL} />
+        <Logo href="/" logo={logo} />
         <NavMenu active={active} />
         <Hamburger active={active} toggleMobileMenu={toggleMobileMenu} />
       </NavBar>
@@ -30,3 +31,5 @@ function Navbar(props) {
 }
 
 export default Navbar;
+
+Navbar.propTypes = { logo: PropTypes.object };

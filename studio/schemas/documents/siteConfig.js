@@ -42,6 +42,9 @@ export default {
                 'Best choice is to use an SVG where the color are set with currentColor',
             name: 'logo',
             type: 'image',
+            options: {
+                hotspot: true
+            },
             fields: [
                 {
                     name: 'alt',
