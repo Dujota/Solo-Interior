@@ -42,7 +42,7 @@ export const NavLogo = styled.a`
 `;
 
 export const NavLogoWrapper = styled.div`
-  width: 70px;
+  width: 85px;
 `;
 
 export const NavMenuList = styled.ul`
