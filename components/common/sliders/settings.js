@@ -1,3 +1,6 @@
+import PrevArrow from './PrevArrow';
+import NextArrow from './NextArrow';
+
 export const projectPageSlider = {
   settings: {
     oneSlide: {
@@ -16,6 +19,22 @@ export const projectPageSlider = {
       swipeToSlide: true,
       swipe: true,
       focusOnSelect: true,
+      nextArrow: <NextArrow />,
+      prevArrow: <PrevArrow />,
+      responsive: [
+        {
+          breakpoint: 600,
+          settings: {
+            dots: false,
+          },
+        },
+        {
+          breakpoint: 480,
+          settings: {
+            dots: false,
+          },
+        },
+      ],
     },
     twoSlides: {
       dots: true,
@@ -33,6 +52,8 @@ export const projectPageSlider = {
       swipeToSlide: true,
       swipe: true,
       focusOnSelect: true,
+      nextArrow: <NextArrow />,
+      prevArrow: <PrevArrow />,
       responsive: [
         {
           breakpoint: 1024,
@@ -66,6 +87,8 @@ export const projectPageSlider = {
       speed: 500,
       slidesToShow: 1,
       slidesToScroll: 1,
+      nextArrow: <NextArrow />,
+      prevArrow: <PrevArrow />,
     },
   },
   imageStyle: { height: 600, margin: '10px' },
