@@ -13,9 +13,9 @@ import SliderImage from '../images/SliderImage';
 function ImageSlider({ images }) {
   return (
     <ImageSliderWrapper className="image-slider slider mb-12">
-      <Slider {...projectPageSlider.settings}>
+      <Slider {...projectPageSlider.settings.oneSlide}>
         {images?.map((image, idx) => (
-          <SliderImage key={idx} image={image} styles={projectPageSlider.imageStyle} />
+          <SliderImage key={idx} image={image} />
         ))}
       </Slider>
     </ImageSliderWrapper>

@@ -6,7 +6,8 @@ export const EmptyCoverImage = styled.div`
 `;
 
 export const SliderImageContainer = styled.div`
-  height: 600px;
+  max-height: 800px;
+  min-height: 600px;
   margin: 10px;
 
   @media only screen and (min-width: 1575px) {
