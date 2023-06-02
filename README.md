@@ -1,34 +1,58 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+## Solo Interior
 
-## Getting Started
+### About The Project
 
-First, run the development server:
+Solo Interior is a website for an established and talented Ukrainian Interior Designer, Tetyana Solovyova. With a master's degree in interior design and a remarkable 15 years of experience in the field, Tetyana brings a unique blend of expertise and creativity to every project. The website showcases various interior design projects, from residential to commercial spaces, and provides an insight into Tetyana's design philosophy and approach.
 
-```bash
-npm run dev
-# or
-yarn dev
-```
+This project is built with Next.js and Sanity.io CMS, providing a robust, scalable, and efficient platform for showcasing interior design work.
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+### Features
 
-You can start editing the page by modifying `pages/index.js`. The page auto-updates as you edit the file.
+Showcases various interior design projects
+Detailed information about the designer
+Contact information
+Technologies Used
+Next.js
+Sanity.io CMS
+Tailwind CSS
+Vercel for deployment
 
-[API routes](https://nextjs.org/docs/api-routes/introduction) can be accessed on [http://localhost:3000/api/hello](http://localhost:3000/api/hello). This endpoint can be edited in `pages/api/hello.js`.
+### Getting Started
 
-The `pages/api` directory is mapped to `/api/*`. Files in this directory are treated as [API routes](https://nextjs.org/docs/api-routes/introduction) instead of React pages.
+To get a local copy up and running, follow these steps:
 
-## Learn More
+- Clone the repository
 
-To learn more about Next.js, take a look at the following resources:
+  `git clone https://github.com/Dujota/Solo-Interior.git`
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+- Install NPM packages
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
+  `npm install`
 
-## Deploy on Vercel
+- Start the development server
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+  `npm run dev`
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+- Open <http://localhost:3000> with your browser to see the result.
+
+### Contributing
+
+Contributions are what make the open-source community such an amazing place to learn, inspire, and create. Any contributions you make are greatly appreciated.
+
+### Fork the Project
+
+- Create your Feature Branch (git checkout -b feature/AmazingFeature)
+- Commit your Changes (git commit -m 'Add some AmazingFeature')
+- Push to the Branch (git push origin feature/AmazingFeature)
+- Open a Pull Request
+
+### License
+
+Distributed under the MIT License. See LICENSE for more information.
+
+### Contact
+
+Denis Dujota - <DenisDujota@gmail.com>
+Tetyana Solovyova - <tet.solovyova@gmail.com>
+
+Project Link: <https://github.com/Dujota/Solo-Interior>
